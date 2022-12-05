@@ -1,0 +1,17 @@
+
+#login_img {
+    -fx-border-color: pink;
+    -fx-border-radius: 2px;
+}
+
+#login_field {
+    -fx-background-color: pink;
+}
+
+#login_hbox {
+    -fx-background-color: red;
+}
+
+#id_label {
+    color: pink;
+}
