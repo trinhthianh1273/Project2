@@ -131,4 +131,21 @@ public class Receipt {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    @Override
+    public String toString() {
+        return "Receipt{" +
+                "id=" + id +
+                ", contract_id=" + contract_id +
+                ", year=" + year +
+                ", month=" + month +
+                ", electric=" + electric +
+                ", water=" + water +
+                ", service=" + service +
+                ", forfeit=" + forfeit +
+                ", total_payment=" + total_payment +
+                ", status=" + status +
+                ", description='" + description + '\'' +
+                '}' + "\n";
+    }
 }

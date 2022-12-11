@@ -132,4 +132,21 @@ public class Renter {
     public void setGender(int gender) {
         this.gender = gender;
     }
+
+    @Override
+    public String toString() {
+        return "Renter{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", phone='" + phone + '\'' +
+                ", email='" + email + '\'' +
+                ", status=" + status +
+                ", dob=" + dob +
+                ", province='" + province + '\'' +
+                ", district='" + district + '\'' +
+                ", commune='" + commune + '\'' +
+                ", address='" + address + '\'' +
+                ", gender=" + gender +
+                '}' + "\n";
+    }
 }

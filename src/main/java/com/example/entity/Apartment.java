@@ -61,6 +61,6 @@ public class Apartment {
                 ", name='" + name + '\'' +
                 ", floor_quanty=" + floor_quanty +
                 ", room_quanty=" + room_quanty +
-                '}';
+                '}' + "\n";
     }
 }

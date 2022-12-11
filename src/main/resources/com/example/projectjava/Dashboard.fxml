@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+
+
+<AnchorPane prefHeight="800.0" prefWidth="1524.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projectjava.Dashboard">
+   <children>
+      <AnchorPane fx:id="link_managermt" prefHeight="400.0" prefWidth="150.0" />
+      <StackPane fx:id="StackPane" layoutX="150.0" prefHeight="800.0" prefWidth="1374.0">
+         <children>
+            <AnchorPane fx:id="renter" prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <Label layoutX="185.0" layoutY="183.0" text="Renter Managerment" />
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="dashboard" prefHeight="638.0" prefWidth="741.0">
+               <children>
+                  <Label layoutX="1016.0" layoutY="617.0" text="Dashboard Management" />
+               </children>
+            </AnchorPane>
+         </children>
+      </StackPane>
+   </children>
+</AnchorPane>

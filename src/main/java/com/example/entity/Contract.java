@@ -231,6 +231,6 @@ public class Contract {
                 ", endDate=" + endDate +
                 ", black=" + black +
                 ", status=" + status +
-                '}';
+                '}' + "\n";
     }
 }
