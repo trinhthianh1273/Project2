@@ -72,6 +72,6 @@ public class Manager {
                 ", login_id='" + login_id + '\'' +
                 ", pass='" + pass + '\'' +
                 ", permission=" + permission +
-                '}';
+                '}' + "\n";
     }
 }
