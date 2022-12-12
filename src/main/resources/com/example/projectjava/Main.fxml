@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.cathive.fonts.fontawesome.FontAwesomeIconView?>
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="border_pane" prefHeight="657.0" prefWidth="1260.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.controller.MainController">
+   <left>
+      <VBox fx:id="sidebar" alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="657.0" prefWidth="292.0" styleClass="sidebar" stylesheets="@asset/css/sidebar.css" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fx:id="logo" fitHeight="92.0" fitWidth="154.0" pickOnBounds="true" preserveRatio="true">
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+               <image>
+                  <Image url="@asset/img/Logo.png" />
+               </image>
+            </ImageView>
+            <Button mnemonicParsing="false" prefHeight="36.0" prefWidth="139.0" styleClass="sidebar-user-btn" text="Trinh Thi Anh">
+               <font>
+                  <Font name="Gabriola" size="22.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="12.0" />
+               </VBox.margin>
+            </Button>
+            <HBox fx:id="dashboard_link" alignment="CENTER_LEFT" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="250.0">
+               <VBox.margin>
+                  <Insets bottom="4.0" />
+               </VBox.margin>
+               <padding>
+                  <Insets left="30.0" />
+               </padding>
+               <children>
+                  <FontAwesomeIconView icon="ICON_DASHBOARD" styleClass="sidebar-btn-icon">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </FontAwesomeIconView>
+                  <Label fx:id="dashboard" onMouseClicked="#show_dashboard" prefHeight="46.0" prefWidth="195.0" text="Dashboard">
+                     <font>
+                        <Font name="Gabriola" size="20.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="15.0" />
+                     </HBox.margin>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Label>
+               </children>
+               <styleClass>
+                  <String fx:value="sidebar-btn" />
+                  <String fx:value="sidebar-btn-active" />
+               </styleClass>
+            </HBox>
+            <HBox fx:id="apartment_link" alignment="CENTER_LEFT" layoutX="10.0" layoutY="158.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="250.0" styleClass="sidebar-btn">
+               <padding>
+                  <Insets left="30.0" />
+               </padding>
+               <children>
+                  <FontAwesomeIconView icon="ICON_HOME" styleClass="sidebar-btn-icon">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </FontAwesomeIconView>
+                  <Label fx:id="apartment" onMouseClicked="#show_apartment" prefHeight="46.0" prefWidth="195.0" text="Apartment Management">
+                     <font>
+                        <Font name="Gabriola" size="20.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="15.0" />
+                     </HBox.margin>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Label>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="4.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox fx:id="room_link" alignment="CENTER_LEFT" layoutX="10.0" layoutY="193.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="250.0" styleClass="sidebar-btn">
+               <padding>
+                  <Insets left="30.0" />
+               </padding>
+               <children>
+                  <FontAwesomeIconView icon="ICON_LIST" styleClass="sidebar-btn-icon">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </FontAwesomeIconView>
+                  <Label fx:id="room" onMouseClicked="#show_room" prefHeight="46.0" prefWidth="195.0" text="Room Management">
+                     <font>
+                        <Font name="Gabriola" size="20.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="15.0" />
+                     </HBox.margin>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Label>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="4.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox fx:id="renter_link" alignment="CENTER_LEFT" layoutX="10.0" layoutY="228.0" prefHeight="35.0" prefWidth="250.0" styleClass="sidebar-btn">
+               <padding>
+                  <Insets left="30.0" />
+               </padding>
+               <children>
+                  <FontAwesomeIconView icon="ICON_USER" styleClass="sidebar-btn-icon">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </FontAwesomeIconView>
+                  <Label fx:id="renter" onMouseClicked="#show_renter" prefHeight="46.0" prefWidth="195.0" text="Renter Management">
+                     <font>
+                        <Font name="Gabriola" size="20.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="15.0" />
+                     </HBox.margin>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Label>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="4.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox fx:id="contract_link" alignment="CENTER_LEFT" layoutX="10.0" layoutY="264.0" prefHeight="35.0" prefWidth="250.0" styleClass="sidebar-btn">
+               <padding>
+                  <Insets left="30.0" />
+               </padding>
+               <children>
+                  <FontAwesomeIconView icon="ICON_BOOK" styleClass="sidebar-btn-icon">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </FontAwesomeIconView>
+                  <Label fx:id="contract" onMouseClicked="#show_contract" prefHeight="46.0" prefWidth="195.0" text="Contract Management">
+                     <font>
+                        <Font name="Gabriola" size="20.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="15.0" />
+                     </HBox.margin>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Label>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="4.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox fx:id="receipt_link" alignment="CENTER_LEFT" layoutX="10.0" layoutY="299.0" prefHeight="35.0" prefWidth="250.0" styleClass="sidebar-btn">
+               <padding>
+                  <Insets left="30.0" />
+               </padding>
+               <children>
+                  <FontAwesomeIconView icon="ICON_INBOX" styleClass="sidebar-btn-icon">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </FontAwesomeIconView>
+                  <Label fx:id="receipt" onMouseClicked="#show_receipt" prefHeight="46.0" prefWidth="195.0" text="Receipt Management">
+                     <font>
+                        <Font name="Gabriola" size="20.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="15.0" />
+                     </HBox.margin>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Label>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="4.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox fx:id="household_good_link" alignment="CENTER_LEFT" layoutX="10.0" layoutY="334.0" prefHeight="35.0" prefWidth="250.0" styleClass="sidebar-btn">
+               <padding>
+                  <Insets left="30.0" />
+               </padding>
+               <children>
+                  <FontAwesomeIconView icon="ICON_TABLE" styleClass="sidebar-btn-icon">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </FontAwesomeIconView>
+                  <Label fx:id="household_good" onMouseClicked="#show_household_good" prefHeight="46.0" prefWidth="195.0" text="Household Good">
+                     <font>
+                        <Font name="Gabriola" size="20.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="15.0" />
+                     </HBox.margin>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Label>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="4.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox fx:id="manager_link" alignment="CENTER_LEFT" layoutX="10.0" layoutY="369.0" prefHeight="35.0" prefWidth="250.0" styleClass="sidebar-btn">
+               <padding>
+                  <Insets left="30.0" />
+               </padding>
+               <children>
+                  <FontAwesomeIconView icon="ICON_USER_MD" styleClass="sidebar-btn-icon">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </FontAwesomeIconView>
+                  <Label fx:id="manager" onMouseClicked="#show_manager" prefHeight="46.0" prefWidth="195.0" text="Manager Management">
+                     <font>
+                        <Font name="Gabriola" size="20.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="15.0" />
+                     </HBox.margin>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Label>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="4.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox fx:id="setting_link" alignment="CENTER_LEFT" layoutX="10.0" layoutY="404.0" prefHeight="35.0" prefWidth="250.0" styleClass="sidebar-btn">
+               <padding>
+                  <Insets left="30.0" />
+               </padding>
+               <children>
+                  <FontAwesomeIconView icon="ICON_WRENCH" styleClass="sidebar-btn-icon">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </FontAwesomeIconView>
+                  <Label fx:id="setting" onMouseClicked="#show_setting" prefHeight="46.0" prefWidth="195.0" text="Setting">
+                     <font>
+                        <Font name="Gabriola" size="20.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="15.0" />
+                     </HBox.margin>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Label>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="4.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="440.0" prefHeight="35.0" prefWidth="250.0" styleClass="sidebar-btn">
+               <padding>
+                  <Insets left="30.0" />
+               </padding>
+               <children>
+                  <FontAwesomeIconView icon="ICON_SIGNOUT" styleClass="sidebar-btn-icon">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </FontAwesomeIconView>
+                  <Label fx:id="signout" onMouseClicked="#out" prefHeight="46.0" prefWidth="195.0" text="Sign out">
+                     <font>
+                        <Font name="Gabriola" size="20.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="15.0" />
+                     </HBox.margin>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Label>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="4.0" />
+               </VBox.margin>
+            </HBox>
+         </children>
+      </VBox>
+   </left>
+</BorderPane>

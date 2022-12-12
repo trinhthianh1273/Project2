@@ -12,11 +12,9 @@ public class login extends Application {
     }
     @Override
     public void start(Stage stage) throws Exception {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("login.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("LoginView.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
-        stage.setTitle("Login!");
         stage.setScene(scene);
-//        stage.setMaximized(true);
         scene.getStylesheets().add(getClass().getResource("asset/css/login.css").toExternalForm());
         stage.show();
     }
