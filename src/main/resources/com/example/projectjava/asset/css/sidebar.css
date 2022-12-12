@@ -7,7 +7,12 @@
     -fx-background-radius: 0px;
 }
 
-.sidebar-btn {
+.sidebar-btn{
+    -fx-background-color: transparent;
+    -fx-background-radius: 0px;
+}
+
+.sidebar-btn:hover {
     -fx-background-color: transparent;
     -fx-background-radius: 0px;
     -fx-border-color: rgb(22, 169, 250);
@@ -21,4 +26,6 @@
 
 .sidebar-btn-active {
     -fx-background-color: #4986ef;
+    -fx-border-color: rgb(22, 169, 250);
+    -fx-border-width: 0px 0px 0px 3px;
 }
