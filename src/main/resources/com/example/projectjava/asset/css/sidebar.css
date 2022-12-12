@@ -1,0 +1,24 @@
+.sidebar {
+    -fx-background-color: rgb(158, 179, 243);
+}
+
+.sidebar-user-btn {
+    -fx-background-color: transparent;
+    -fx-background-radius: 0px;
+}
+
+.sidebar-btn {
+    -fx-background-color: transparent;
+    -fx-background-radius: 0px;
+    -fx-border-color: rgb(22, 169, 250);
+    -fx-border-width: 0px 0px 0px 3px;
+
+}
+
+.sidebar-btn-icon {
+    -fx-fill: #b8b1b1;
+}
+
+.sidebar-btn-active {
+    -fx-background-color: #4986ef;
+}
