@@ -22,7 +22,7 @@
                   <Insets top="20.0" />
                </VBox.margin>
                <image>
-                  <Image url="@asset/img/Logo.png" />
+                  <Image url="@asset/img/group1-real-estate-high-resolution-logo-color-on-transparent-background%20(1).png" />
                </image>
             </ImageView>
             <Button mnemonicParsing="false" prefHeight="36.0" prefWidth="139.0" styleClass="sidebar-user-btn" text="Trinh Thi Anh">

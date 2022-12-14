@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
@@ -10,14 +9,20 @@
    <children>
       <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
          <children>
-            <Label text="Dashboard" textFill="#757373">
-               <font>
-                  <Font size="24.0" />
-               </font>
-               <HBox.margin>
-                  <Insets left="12.0" />
-               </HBox.margin>
-            </Label>
+            <VBox alignment="CENTER" prefHeight="100.0" prefWidth="199.0">
+               <children>
+                  <Label text="Dashboard" textFill="#757373">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="52.0" layoutY="43.0" prefHeight="16.0" prefWidth="114.0" text="Apartment Management" textAlignment="CENTER" textFill="#757373">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
          </children>
       </HBox>
       <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" />

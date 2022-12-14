@@ -15,7 +15,7 @@
    <children>
       <ImageView fitHeight="625.0" fitWidth="669.0" layoutX="-69.0" layoutY="-7.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image />
+            <Image url="@asset/img/71a57c672a518048e01847f4b728da23.jpg" />
          </image>
       </ImageView>
       <Label alignment="CENTER" layoutX="-4.0" layoutY="80.0" prefHeight="66.0" prefWidth="201.0" text="LOGIN" textFill="WHITE">
