@@ -122,7 +122,7 @@ create table receipt(
 );
 
 alter table receipt
-    add foreign key(tenacy_id) references tenancy(id);
+    add foreign key(tenacy_id) references contract(id);
 
 create table manager(
                         id int(11) not null auto_increment primary key,

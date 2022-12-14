@@ -4,7 +4,6 @@
 <?import java.lang.String?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
-<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -12,6 +11,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
 <BorderPane fx:id="border_pane" prefHeight="657.0" prefWidth="1260.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.controller.MainController">
    <left>
@@ -25,14 +25,14 @@
                   <Image url="@asset/img/group1-real-estate-high-resolution-logo-color-on-transparent-background%20(1).png" />
                </image>
             </ImageView>
-            <Button mnemonicParsing="false" prefHeight="36.0" prefWidth="139.0" styleClass="sidebar-user-btn" text="Trinh Thi Anh">
-               <font>
-                  <Font name="Gabriola" size="22.0" />
-               </font>
+            <Text fx:id="userSessionName" strokeType="OUTSIDE" strokeWidth="0.0">
                <VBox.margin>
-                  <Insets bottom="12.0" />
+                  <Insets bottom="12.0" top="12.0" />
                </VBox.margin>
-            </Button>
+               <font>
+                  <Font name="Gabriola" size="24.0" />
+               </font>
+            </Text>
             <HBox fx:id="dashboard_link" alignment="CENTER_LEFT" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="250.0">
                <VBox.margin>
                   <Insets bottom="4.0" />
