@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.cathive.fonts.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="520.0" prefWidth="800.0" stylesheets="@asset/css/login.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.controller.loginController">
+   <children>
+      <ImageView fitHeight="520.0" fitWidth="400.0" pickOnBounds="true" preserveRatio="true" />
+      <VBox prefHeight="200.0" prefWidth="400.0">
+         <children>
+            <Label text="Wellcome">
+               <VBox.margin>
+                  <Insets bottom="48.0" left="24.0" top="48.0" />
+               </VBox.margin>
+               <font>
+                  <Font size="26.0" />
+               </font>
+            </Label>
+            <VBox prefHeight="88.0" prefWidth="100.0">
+               <children>
+                  <Label text="Usenamer">
+                     <padding>
+                        <Insets bottom="5.0" />
+                     </padding>
+                     <graphic>
+                        <FontAwesomeIconView icon="ICON_USER">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </FontAwesomeIconView>
+                     </graphic>
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="username_field" styleClass="text-field" stylesheets="@asset/css/login.css">
+                     <opaqueInsets>
+                        <Insets left="12.0" right="12.0" top="12.0" />
+                     </opaqueInsets>
+                  </TextField>
+               </children>
+               <padding>
+                  <Insets left="36.0" right="36.0" top="12.0" />
+               </padding>
+            </VBox>
+            <VBox layoutX="10.0" layoutY="76.0" prefHeight="88.0" prefWidth="100.0">
+               <children>
+                  <Label text="Password">
+                     <VBox.margin>
+                        <Insets bottom="5.0" />
+                     </VBox.margin>
+                     <graphic>
+                        <FontAwesomeIconView icon="ICON_KEY">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </FontAwesomeIconView>
+                     </graphic>
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <PasswordField fx:id="password_field" styleClass="text-field" />
+               </children>
+               <padding>
+                  <Insets left="36.0" right="36.0" top="12.0" />
+               </padding>
+            </VBox>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <RadioButton fx:id="remember" mnemonicParsing="false" text="Remember Me" />
+                  <Label fx:id="signin_label" onMouseClicked="#signin" text="Sign In">
+                     <graphic>
+                        <FontAwesomeIconView icon="ICON_SIGNIN">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                           <padding>
+                              <Insets right="6.0" />
+                           </padding>
+                        </FontAwesomeIconView>
+                     </graphic>
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="98.0" />
+                     </HBox.margin>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets left="36.0" right="36.0" top="12.0" />
+               </padding>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</HBox>

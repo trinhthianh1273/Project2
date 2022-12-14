@@ -15,3 +15,8 @@
 #id_label {
     color: pink;
 }
+
+.text-field {
+    -fx-border-color: transparent;
+
+}
