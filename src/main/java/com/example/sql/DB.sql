@@ -29,7 +29,7 @@ alter table room
 
 create table household_good(
                                id int(5) not null auto_increment primary key,
-                               category_id int(5) not null,
+                               not_used int(5) not null,
                                name varchar(30) not null,
                                quanty int(3),
                                createDate timestamp not null default current_timestamp,
@@ -46,16 +46,16 @@ values("bed", 40),
       ("small_table",38),
       ("chair", 58);
 
-use apartment;
-create table household_category(
-                                   id int(5) not null,
-                                   name varchar(30) not null unique,
-                                   createDate timestamp not null default current_timestamp,
-                                   updateDate timestamp null
-);
+-- use apartment;
+-- create table household_category(
+--                                    id int(5) not null,
+--                                    name varchar(30) not null unique,
+--                                    createDate timestamp not null default current_timestamp,
+--                                    updateDate timestamp null
+-- );
 
--- alter table household_good
--- add foreign key(category_id) references household_category(id);
+-- -- alter table household_good
+-- -- add foreign key(category_id) references household_category(id);
 
 use apartment;
 create table renter(
