@@ -17,7 +17,7 @@ public class UserSessionModel {
 
     public UserSession getOne(String userName, String password) {
         UserSession manager = new UserSession();
-        String sql = "Select * from " + this.table + " where id = ?";
+        String sql = "Select * from " + this.table + " where ";
         return null;
     }
 }
