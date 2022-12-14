@@ -27,7 +27,9 @@ public class loginController implements Initializable {
 
     @FXML
     void signin(MouseEvent event) {
-
+        System.out.println("login");
+        System.out.println(username_field.getText());
+        System.out.println(password_field.getText());
     }
 
     @Override
