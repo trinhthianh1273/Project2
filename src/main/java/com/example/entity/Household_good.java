@@ -66,6 +66,6 @@ public class Household_good {
                 ", name='" + name + '\'' +
                 ", quanty=" + quanty +
                 ", not_used=" + not_used +
-                '}';
+                '}' + "\n";
     }
 }

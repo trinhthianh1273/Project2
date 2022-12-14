@@ -12,6 +12,15 @@ public class Room {
     public Room() {
     }
 
+    public Room(int apartment_id, String name, int floor, int member_max, int rental, int status) {
+        this.apartment_id = apartment_id;
+        this.name = name;
+        this.floor = floor;
+        this.member_max = member_max;
+        this.rental = rental;
+        this.status = status;
+    }
+
     public Room(int id, int apartment_id, String name, int floor, int member_max, int rental, int status) {
         this.id = id;
         this.apartment_id = apartment_id;
@@ -88,6 +97,6 @@ public class Room {
                 ", member_max=" + member_max +
                 ", rental=" + rental +
                 ", status=" + status +
-                '}';
+                '}' + "\n";
     }
 }
