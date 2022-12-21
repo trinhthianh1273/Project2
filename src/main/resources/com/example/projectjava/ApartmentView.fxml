@@ -8,28 +8,27 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="657.0" prefWidth="974.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.controller.ApartmentController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="657.0" prefWidth="974.0" stylesheets="@asset/css/main.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.controller.ApartmentController">
    <children>
-      <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+      <HBox alignment="CENTER_LEFT" prefHeight="89.0" prefWidth="974.0">
          <children>
-            <Label text="Apartment Management" textFill="#757373">
+            <Label text="Apartment Management" textFill="#595757">
                <font>
-                  <Font size="24.0" />
+                  <Font name="Consolas" size="26.0" />
                </font>
                <HBox.margin>
-                  <Insets left="12.0" />
+                  <Insets left="24.0" />
                </HBox.margin>
             </Label>
          </children>
       </HBox>
-      <TableView fx:id="apartment_table" prefHeight="200.0" prefWidth="777.0">
+      <TableView fx:id="apartment_table" prefHeight="200.0" prefWidth="777.0" stylesheets="@asset/css/main.css">
         <columns>
           <TableColumn fx:id="id" prefWidth="75.0" text="ID" />
           <TableColumn fx:id="name" prefWidth="149.60003662109375" text="Name" />
             <TableColumn fx:id="floor_quanty" prefWidth="97.59991455078125" text="Floor_quanty" />
             <TableColumn fx:id="room_quanty" prefWidth="80.800048828125" text="Room_quanty" />
-            <TableColumn fx:id="eidt" prefWidth="88.800048828125" text="Edit" />
-            <TableColumn fx:id="remove" prefWidth="68.0" text="Remove" />
+            <TableColumn fx:id="Action" prefWidth="80.800048828125" text="Action" />
         </columns>
          <VBox.margin>
             <Insets bottom="24.0" left="200.0" right="200.0" top="36.0" />
