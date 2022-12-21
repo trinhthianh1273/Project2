@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.cathive.fonts.fontawesome.FontAwesomeIconView?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="657.0" prefWidth="974.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
    <children>
@@ -14,11 +18,63 @@
                <font>
                   <Font size="24.0" />
                </font>
-               <HBox.margin>
-                  <Insets left="12.0" />
-               </HBox.margin>
             </Label>
          </children>
       </HBox>
+      <HBox prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <VBox alignment="CENTER" prefHeight="100.0" prefWidth="235.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" />
+                  <Label text="TotalItem">
+                     <graphic>
+                        <FontAwesomeIconView icon="ICON_HOME" />
+                     </graphic>
+                  </Label>
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="100.0" prefWidth="311.0">
+               <children>
+                  <Label alignment="CENTER" text="InUse">
+                     <graphic>
+                        <FontAwesomeIconView icon="ICON_PLUS" prefHeight="0.0" prefWidth="21.0" />
+                     </graphic>
+                  </Label>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="100.0" prefWidth="327.0">
+               <children>
+                  <Label alignment="CENTER" text="Avalible" textAlignment="JUSTIFY">
+                     <graphic>
+                        <FontAwesomeIconView icon="ICON_MINUS_SIGN" />
+                     </graphic>
+                  </Label>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" />
+               </children>
+               <opaqueInsets>
+                  <Insets left="100.0" />
+               </opaqueInsets>
+            </VBox>
+         </children>
+         <opaqueInsets>
+            <Insets left="100.0" right="100.0" />
+         </opaqueInsets>
+      </HBox>
+      <TableView prefHeight="200.0" prefWidth="200.0">
+        <columns>
+          <TableColumn prefWidth="171.99999487400055" text="ItemId" />
+          <TableColumn prefWidth="218.6667022705078" text="ItemName" />
+            <TableColumn prefWidth="90.66670227050781" text="Quantity" />
+            <TableColumn prefWidth="89.33331298828125" text="Available" />
+            <TableColumn minWidth="6.6666259765625" prefWidth="58.66668701171875" text="C2" />
+        </columns>
+         <VBox.margin>
+            <Insets left="100.0" right="100.0" />
+         </VBox.margin>
+      </TableView>
    </children>
+   <opaqueInsets>
+      <Insets />
+   </opaqueInsets>
 </VBox>
