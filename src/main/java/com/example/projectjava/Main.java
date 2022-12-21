@@ -13,6 +13,7 @@ public class Main extends Application {
         Scene scene = new Scene(fxmlLoader.load());
         stage.setScene(scene);
         scene.getStylesheets().add(getClass().getResource("asset/css/sidebar.css").toExternalForm());
+        scene.getStylesheets().add(getClass().getResource("asset/css/main.css").toExternalForm());
         stage.show();
     }
 }
