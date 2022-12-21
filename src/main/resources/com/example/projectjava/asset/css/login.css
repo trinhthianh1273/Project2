@@ -15,3 +15,13 @@
 #id_label {
     color: pink;
 }
+
+.text-field {
+    -fx-border-color: transparent;
+}
+
+.btn {
+    -fx-border-radius: 100px;
+    /*-fx-border-color: red;*/
+    -fx-background-color: rgb(158, 179, 243);
+}

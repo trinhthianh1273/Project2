@@ -1,17 +1,23 @@
 package com.example.entity;
-
-public class manager {
+public class Manager {
     private int id;
     private String name;
     private String login_id;
     private String pass;
     private int permission;
 
-    public manager() {
+    public Manager() {
     }
 
-    public manager(int id, String name, String login_id, String pass, int permission) {
+    public Manager(int id, String name, String login_id, String pass, int permission) {
         this.id = id;
+        this.name = name;
+        this.login_id = login_id;
+        this.pass = pass;
+        this.permission = permission;
+    }
+
+    public Manager(String name, String login_id, String pass, int permission) {
         this.name = name;
         this.login_id = login_id;
         this.pass = pass;
@@ -66,6 +72,6 @@ public class manager {
                 ", login_id='" + login_id + '\'' +
                 ", pass='" + pass + '\'' +
                 ", permission=" + permission +
-                '}';
+                '}' + "\n";
     }
 }
