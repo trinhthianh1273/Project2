@@ -1,24 +1,83 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.cathive.fonts.fontawesome.FontAwesomeIconView?>
+<?import com.gluonhq.charm.glisten.control.DropdownButton?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="657.0" prefWidth="974.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
-   <children>
-      <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="657.0" prefWidth="974.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.controller.ContractController">
+    <children>
+        <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+            <children>
+                <Label fx:id="contract_label" text="Contract Management" textFill="#757373">
+                    <font>
+                        <Font size="24.0" />
+                    </font>
+                    <HBox.margin>
+                        <Insets left="12.0" />
+                    </HBox.margin>
+                </Label>
+            </children>
+        </HBox>
+      <HBox prefHeight="100.0" prefWidth="200.0">
          <children>
-            <Label fx:id="contract_label" text="Contract Management" textFill="#757373">
-               <font>
-                  <Font size="24.0" />
-               </font>
-               <HBox.margin>
-                  <Insets left="12.0" />
-               </HBox.margin>
-            </Label>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <FontAwesomeIconView icon="ICON_STAR" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="TotalContract" />
+                  <TextField alignment="CENTER" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="261.0">
+               <children>
+                  <FontAwesomeIconView icon="ICON_USER" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Renting" />
+                  <TextField />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <FontAwesomeIconView icon="ICON_TRASH" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Expired" />
+                  <TextField alignment="CENTER" />
+               </children>
+            </HBox>
          </children>
       </HBox>
-   </children>
+      <HBox prefHeight="97.0" prefWidth="974.0">
+         <children>
+            <DropdownButton>
+                <items>
+                    <MenuItem text="Choice 1" />
+                    <MenuItem text="Choice 2" />
+                    <MenuItem text="Choice 3" />
+                </items>
+            </DropdownButton>
+            <DropdownButton>
+                <items>
+                    <MenuItem text="Choice 1" />
+                    <MenuItem text="Choice 2" />
+                    <MenuItem text="Choice 3" />
+                </items>
+            </DropdownButton>
+         </children>
+      </HBox>
+      <TableView prefHeight="200.0" prefWidth="200.0">
+        <columns>
+          <TableColumn prefWidth="162.6666818857193" text="ContractId" />
+          <TableColumn prefWidth="126.00004577636719" text="Owner" />
+            <TableColumn prefWidth="213.99993896484375" text="StartDate" />
+            <TableColumn prefWidth="233.33331298828125" text="EndDate" />
+            <TableColumn prefWidth="214.0" text="Status" />
+        </columns>
+      </TableView>
+    </children>
 </VBox>
