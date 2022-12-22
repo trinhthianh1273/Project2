@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.gluonhq.charm.glisten.control.DropdownButton?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
@@ -26,9 +29,39 @@
       </HBox>
       <AnchorPane prefHeight="550.0" prefWidth="974.0">
          <children>
-            <TextArea prefHeight="143.0" prefWidth="277.0" />
             <TextField layoutX="47.0" layoutY="87.0" />
             <Text layoutX="89.0" layoutY="71.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TotalReceipt" />
+            <HBox alignment="CENTER_LEFT" layoutY="143.0" prefHeight="100.0" prefWidth="676.0">
+               <children>
+                  <DropdownButton>
+                      <items>
+                          <MenuItem text="Choice 1" />
+                          <MenuItem text="Choice 2" />
+                          <MenuItem text="Choice 3" />
+                      </items>
+                  </DropdownButton>
+                  <DropdownButton id="BuildingSelection">
+                     <items>
+                        <MenuItem text="Choice 1" />
+                        <MenuItem text="Choice 2" />
+                        <MenuItem text="Choice 3" />
+                     </items>
+                  </DropdownButton>
+               </children>
+            </HBox>
+            <TableView layoutX="-1.0" layoutY="211.0" prefHeight="366.0" prefWidth="975.0">
+              <columns>
+                <TableColumn prefWidth="83.3333410024643" text="ReceiptId" />
+                <TableColumn minWidth="0.0" prefWidth="104.66666412353516" text="Creatdate" />
+                  <TableColumn minWidth="0.0" prefWidth="97.33329772949219" text="Updatedate" />
+                  <TableColumn minWidth="0.0" prefWidth="122.0" text="Status" />
+                  <TableColumn minWidth="0.0" prefWidth="98.66668701171875" text="Water" />
+                  <TableColumn minWidth="0.0" prefWidth="96.00003051757812" text="Electric" />
+                  <TableColumn minWidth="0.0" prefWidth="106.0" text="Service" />
+                  <TableColumn minWidth="0.0" prefWidth="126.6666259765625" text="Total" />
+                  <TableColumn minWidth="0.0" prefWidth="134.6666259765625" text="Button" />
+              </columns>
+            </TableView>
          </children>
       </AnchorPane>
    </children>

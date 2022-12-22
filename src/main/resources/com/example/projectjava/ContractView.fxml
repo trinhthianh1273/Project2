@@ -31,9 +31,9 @@
          <children>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <FontAwesomeIconView icon="ICON_STAR" />
+                  <FontAwesomeIconView icon="ICON_HOME" />
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="TotalContract" />
-                  <TextField alignment="CENTER" />
+                  <TextField />
                </children>
             </HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="261.0">
@@ -70,7 +70,7 @@
             </DropdownButton>
          </children>
       </HBox>
-      <TableView prefHeight="200.0" prefWidth="200.0">
+      <TableView prefHeight="429.0" prefWidth="974.0">
         <columns>
           <TableColumn prefWidth="162.6666818857193" text="ContractId" />
           <TableColumn prefWidth="126.00004577636719" text="Owner" />
