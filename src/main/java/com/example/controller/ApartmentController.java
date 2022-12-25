@@ -96,6 +96,7 @@ public class ApartmentController implements Initializable {
                             }
                         });
                     }
+                    
 
                     {
                         RemoveBtn.setOnAction((ActionEvent event) -> {
