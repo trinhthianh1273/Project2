@@ -108,21 +108,24 @@ add foreign key(renter3) references renter(id);
 
 create table receipt(
                         id int(11) not null auto_increment primary key,
-                        tenacy_id int(11) not null,
+                        contract_id int(11) not null,
                         year int(5) not null,
                         month int(2) not null,
-                        electric int(11) not null,
-                        water int(11) not null,
+                        electricOld int(11) not null,
+                        electricNew int(11) not null,
+                        waterOld int(11) not null,
+                        waterNew int(11) not null,
                         service int(11) not null,
                         forfeit int(11) null,
                         total_payment int(11) not null,
                         status int(1) not null,
                         createDate timestamp not null default current_timestamp,
-                        updateDate timestamp null
+                        updateDate timestamp null,
+                        description varchar(255) null
 );
 
 alter table receipt
-    add foreign key(tenacy_id) references contract(id);
+    add foreign key(contract_id) references contract(id);
 
 create table manager(
                         id int(11) not null auto_increment primary key,
@@ -241,6 +244,58 @@ values("Trinh Thi Anh", "0941147009", "phungbaokimanh@gmail.com", 1, '2000-04-19
       ("Nguyen Van Chung", "0111111148", "nguyenvanchung@gmail.com", 1,'2000-05-26','Ha Noi', 'Hai Ba Trung', 'Pho Hue', '', 1),
       ("Tran Thi Minh", "0111111149", "tranthiminh@gmail.com", 1, '2000-05-27','Ha Noi', 'Hai Ba Trung', 'Pho Hue', '', 0);
 
-insert into contract(room_id, proxy_id, renter1, renter2, renter3, bed, wardrobe, fridge, titchen_infrared, pot, desk, small_table, chair)
-values(1, 1, 2, 3, null, 1, 1, 1, 1, 1, 1, 1, 1),
-      (2, 4, 5, null, null, 1, 1, 1, 1, 1, 1, 1, 1);
+insert into contract(room_id, proxy_id, renter1, renter2, renter3, bed, wardrobe, fridge, titchen_infrared, pot, desk, small_table, chair, blank, status)
+values(1, 1, 2, 3, null, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+      (2, 4, 5, null, null, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+      (3,	6,	7,	null, null,	1,	1,	1,	1,	1,	1,	1,	1,	3,	1),
+      (4,	8,	9,	10, null,	1,	1,	1,	1,	1,	1,	1,	1,	1,	1),
+      (5,	11,	12,	13,	14,	1,	1,	1,	1,	1,	1,	1,	1,	0,	1),
+      (6,	15,	16,	null, null,	1,	1,	1,	1,	1,	1,	1,	1,2,	1),
+      (7,17,	18,	null, null,	1,	1,	1,	1,	1,	1,	1,	1,	2,	1),
+      (8,	19,	20,	null, null,	1,	1,	1,	1,	1,	1,	1,	1,	2,	1),
+      (9,	21,	22,	23,	null,	1,	1,	1,	1,	1,	1,	1,	1, 1,	1),
+      (10,	24,	25,	26,	27,	1,	1,	1,	1,	1,	1,	1,	1, 0,	1),
+      (11,	28,	29,	null,null,	1,	1,	1,	1,	1,	1,	1,	1,	2,	1),
+      (12,	30,	31,	32,	null,	1,	1,	1,	1,	1,	1,	1,	1,	1,	1),
+      (13,	33,	null, null, null,	1,	1,	1,	1,	1,	1,	1,	1,	3,1),
+      (14,	34,	null, null, null, 1,	1,	1,	1,	1,	1,	1,	1,	3,	1),
+      (15,	35,	36,	null, null,	1,	1,	1,	1,	1,	1,	1,	1,	2,	1),
+      (16,	37,	38,	null, null,	1,	1,	1,	1,	1,	1,	1,	1,	2,	1),
+      (17,	39,	40,	null,null,	1,	1,	1,	1,	1,	1,	1,	1,	2,	1);
+      
+      
+insert into receipt(contract_id, year, month, electricOld, electricNew, waterOld, waterNew, service, forfeit, total_payment, status, description)
+values (1,	2022,	10, 0,	120, 0,	3,	600000,	0,	6140000,	0, null),
+		(2,	2022,	10, 0,	121,0,	3,	400000,	0,	5944000,	0,	null),
+        (3,	2022,	10, 0,	122,0,	4,	400000,	0,	5968000,	0, null),
+        (4,	2022,	10, 0,	123, 0,	4,	600000,	0,	61172000,	0, null),
+        (5,	2022,	10, 0,	124, 0,	6,	800000,	0,	51416000,	0, null),
+        (6,	2022,	10, 0,	125, 0,	5,	400000,	0,	6000000,	0, null),
+        (7,	2022,	10,0,	126, 0,	5,	400000,	0,	6004000,	0,	null),
+        (8,	2022,	10, 0,	127, 0,	5,	400000,	0,	6008000,	0, null),
+        (9,	2022,	10, 0,	128, 0,	5,	600000,	0,	61212000,	0, null),
+        (10,	2022,	10, 0,	194, 0,	4,	800000,	0,	6656000,	0, null),
+        (11,	2022,	10, 0,	130, 0,	4,	400000,	0,	9000000,	0, null),
+        (12,	2022,	10, 0,	131, 0,	3,	600000,	0,	9184000,	0, null),
+        (13,	2022,	10, 0,	132, 0,	5,	200000,	0,	8828000,	0, null),
+        (14,	2022,	10, 0,	133, 0,	4,	200000,	0,	8812000,	0, null),
+        (15,	2022,	10, 0,	134, 0,	3,	400000,	0,	8942000,	0, null),
+        (16,	2022,	10, 0,	135, 0,	5,	400000,	0,	9040000,	0, null),
+        (17,	2022,	10, 0,	136, 0,	5,	400000,	0,	9044000,	0, null),
+        (1,	2022,	11, 120,	240, 3,	6,	600000,	0,	6140000,    0, null),
+        (2,	2022,	11, 121,	242, 3,	3,	400000,	0,	5944000,	1, null),
+        (3,	2022,	11, 122,	244, 4,	8,	400000,	0,	5968000,	1, null),
+        (4,	2022,	11, 123,	246, 4,	8,	600000,	0,	61172000,	0, null),
+        (5,	2022,	11,	124, 248,	6, 12,	800000,	0,	51416000,	0, null),
+        (6,	2022,	11,	125, 250,	5, 10,	400000,	0,	6000000,	1, null),
+        (7,	2022,	11,	126, 252,	5, 10,	400000,	0,	6004000,	1, null),
+        (8,	2022,	11,	127, 254,	5, 10,	400000,	0,	6008000,	1, null),
+        (9,	2022,	11,	128, 256,	5, 10,	600000,	0,	6121000,	0, null),
+        (10,	2022,	11,	194, 388,	4, 8,	800000,	0,	6656000,	1, null),
+        (11,	2022,	11,	130, 260,	4, 8,	400000,	0,	9000000,	1, null),
+        (12,	2022,	11,	131, 262,	3, 6,	600000,	0,	9184000,	1, null),
+        (13,	2022,	11,	132, 164,	5, 10,	200000,	0,	8828000,	1, null),
+        (14,	2022,	11,	133, 266,	4, 8,	200000,	0,	8812000,	1, null),
+        (15,	2022,	11,	134, 268,	3, 6,	400000,	0,	8942000,	1, null),
+        (16,	2022,	11,	135, 270,	5, 10,	400000,	0,	9040000,	0, null),
+        (17,	2022,	11,	136, 272,	5, 10,	400000,	0,	9044000,	0, null);
