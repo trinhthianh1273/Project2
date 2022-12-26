@@ -36,15 +36,15 @@ create table household_good(
                                updateDate timestamp null
 );
 
-insert into household_good(name, quanty)
-values("bed", 40),
-      ("wardrobe",40),
-      ("fridge",40),
-      ("titchen_infrared",40),
-      ("pot",66),
-      ("desk",54),
-      ("small_table",38),
-      ("chair", 58);
+insert into household_good(name, quanty, not_used)
+values("bed", 40, 40),
+      ("wardrobe",40, 40),
+      ("fridge",40, 40),
+      ("titchen_infrared",40, 40),
+      ("pot",66, 40),
+      ("desk",54, 40),
+      ("small_table",38, 40),
+      ("chair", 58, 40);
 
 -- use apartment;
 -- create table household_category(
@@ -143,61 +143,61 @@ values("Trinh Thi Anh", "tta", "12345678", 1),
       ("Ly Bao Anh", "lba", "12345678", 2),
       ("Nguyen Duy Anh", "nda", "12345678", 2);
 
-insert into room(apartment_id, name, floor, member_max, rental)
-values(1, "0201", 2, 4, 5000000),
-      (1, "0202", 2, 4, 5000000),
-      (1, "0203", 2, 4, 5000000),
-      (1, "0204", 2, 4, 5000000),
-      (1, "0205", 2, 4, 5000000);
+insert into room(apartment_id, name, floor, member_max, rental, status)
+values(1, "0201", 2, 4, 5000000, 1),
+      (1, "0202", 2, 4, 5000000, 1),
+      (1, "0203", 2, 4, 5000000, 1),
+      (1, "0204", 2, 4, 5000000, 1),
+      (1, "0205", 2, 4, 5000000, 1);
 
-insert into room(apartment_id, name, floor, member_max, rental)
-values(1, "0301", 3, 4, 5000000),
-      (1, "0302", 3, 4, 5000000),
-      (1, "0303", 3, 4, 5000000),
-      (1, "0304", 3, 4, 5000000),
-      (1, "0305", 3, 4, 5000000);
+insert into room(apartment_id, name, floor, member_max, rental, status)
+values(1, "0301", 3, 4, 5000000, 1),
+      (1, "0302", 3, 4, 5000000, 1),
+      (1, "0303", 3, 4, 5000000, 1),
+      (1, "0304", 3, 4, 5000000, 1),
+      (1, "0305", 3, 4, 5000000, 1);
 
-insert into room(apartment_id, name, floor, member_max, rental)
-values(1, "0401", 4, 4, 8000000),
-      (1, "0402", 4, 4, 8000000),
-      (1, "0403", 4, 4, 8000000),
-      (1, "0404", 4, 4, 8000000),
-      (1, "0405", 4, 4, 8000000);
+insert into room(apartment_id, name, floor, member_max, rental, status)
+values(1, "0401", 4, 4, 8000000, 1),
+      (1, "0402", 4, 4, 8000000, 1),
+      (1, "0403", 4, 4, 8000000, 1),
+      (1, "0404", 4, 4, 8000000, 1),
+      (1, "0405", 4, 4, 8000000, 1);
 
-insert into room(apartment_id, name, floor, member_max, rental)
-values(1, "0501", 5, 4, 8000000),
-      (1, "0502", 5, 4, 8000000),
-      (1, "0503", 5, 4, 8000000),
-      (1, "0504", 5, 4, 8000000),
-      (1, "0505", 5, 4, 8000000);
+insert into room(apartment_id, name, floor, member_max, rental, status)
+values(1, "0501", 5, 4, 8000000, 1),
+      (1, "0502", 5, 4, 8000000, 1),
+      (1, "0503", 5, 4, 8000000, 0),
+      (1, "0504", 5, 4, 8000000, 0),
+      (1, "0505", 5, 4, 8000000, 0);
 
-insert into room(apartment_id, name, floor, member_max, rental)
-values(1, "0601", 6, 4, 8000000),
-      (1, "0602", 6, 4, 8000000),
-      (1, "0603", 6, 4, 8000000),
-      (1, "0604", 6, 4, 8000000),
-      (1, "0605", 6, 4, 8000000);
+insert into room(apartment_id, name, floor, member_max, rental, status)
+values(1, "0601", 6, 4, 8000000, 0),
+      (1, "0602", 6, 4, 8000000, 0),
+      (1, "0603", 6, 4, 8000000, 0),
+      (1, "0604", 6, 4, 8000000, 0),
+      (1, "0605", 6, 4, 8000000, 0);
 
-insert into room(apartment_id, name, floor, member_max, rental)
-values(1, "0701", 7, 4, 9000000),
-      (1, "0702", 7, 4, 9000000),
-      (1, "0703", 7, 4, 9000000),
-      (1, "0704", 7, 4, 9000000),
-      (1, "0705", 7, 4, 9000000);
+insert into room(apartment_id, name, floor, member_max, rental, status)
+values(1, "0701", 7, 4, 9000000, 0),
+      (1, "0702", 7, 4, 9000000, 0),
+      (1, "0703", 7, 4, 9000000, 0),
+      (1, "0704", 7, 4, 9000000, 0),
+      (1, "0705", 7, 4, 9000000, 0);
 
-insert into room(apartment_id, name, floor, member_max, rental)
-values(1, "0801", 8, 4, 9000000),
-      (1, "0802", 8, 4, 9000000),
-      (1, "0803", 8, 4, 9000000),
-      (1, "0804", 8, 4, 9000000),
-      (1, "0805", 8, 4, 9000000);
+insert into room(apartment_id, name, floor, member_max, rental, status)
+values(1, "0801", 8, 4, 9000000, 0),
+      (1, "0802", 8, 4, 9000000, 0),
+      (1, "0803", 8, 4, 9000000, 0),
+      (1, "0804", 8, 4, 9000000, 0),
+      (1, "0805", 8, 4, 9000000, 0);
 
-insert into room(apartment_id, name, floor, member_max, rental)
-values(1, "0901", 9, 4, 9000000),
-      (1, "0902", 9, 4, 9000000),
-      (1, "0903", 9, 4, 9000000),
-      (1, "0904", 9, 4, 9000000),
-      (1, "0905", 9, 4, 9000000);
+insert into room(apartment_id, name, floor, member_max, rental, status)
+values(1, "0901", 9, 4, 9000000, 0
+      (1, "0902", 9, 4, 9000000, 0),
+      (1, "0903", 9, 4, 9000000, 0),
+      (1, "0904", 9, 4, 9000000, 0),
+      (1, "0905", 9, 4, 9000000, 0);
 
 
 SET TIME_ZONE = '+00:00';
