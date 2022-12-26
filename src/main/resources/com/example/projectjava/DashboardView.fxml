@@ -37,7 +37,7 @@
                   <TextFlow prefHeight="138.0" prefWidth="200.0">
                      <children>
                         <Icon content="PERSON_ADD" />
-                        <Text onDragDetected="#AvailableRoom" strokeType="OUTSIDE" strokeWidth="0.0" text="Available Room" wrappingWidth="39.983070373535156" />
+                        <Text  strokeType="OUTSIDE" strokeWidth="0.0" text="Available Room" wrappingWidth="39.983070373535156" />
                      </children>
                   </TextFlow>
                </children>
