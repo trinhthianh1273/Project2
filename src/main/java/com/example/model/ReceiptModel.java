@@ -32,8 +32,10 @@ public class ReceiptModel implements ICommon<Receipt> {
                 receipt.setContract_id(rs.getInt("contract_id"));
                 receipt.setYear(rs.getInt("year"));
                 receipt.setMonth(rs.getInt("month"));
-                receipt.setElectric(rs.getInt("electric"));
-                receipt.setWater(rs.getInt("water"));
+                receipt.setElectricOld(rs.getInt("electricOld"));
+                receipt.setElectricNew(rs.getInt("electricNew"));
+                receipt.setWaterOld(rs.getInt("waterOld"));
+                receipt.setWaterNew(rs.getInt("waterNew"));
                 receipt.setService(rs.getInt("service"));
                 receipt.setForfeit(rs.getInt("forfeit"));
                 receipt.setTotal_payment(rs.getInt("total_payment"));
@@ -68,8 +70,10 @@ public class ReceiptModel implements ICommon<Receipt> {
                 receipt.setContract_id(rs.getInt("contract_id"));
                 receipt.setYear(rs.getInt("year"));
                 receipt.setMonth(rs.getInt("month"));
-                receipt.setElectric(rs.getInt("electric"));
-                receipt.setWater(rs.getInt("water"));
+                receipt.setElectricOld(rs.getInt("electricOld"));
+                receipt.setElectricNew(rs.getInt("electricNew"));
+                receipt.setWaterOld(rs.getInt("waterOld"));
+                receipt.setWaterNew(rs.getInt("waterNew"));
                 receipt.setService(rs.getInt("service"));
                 receipt.setForfeit(rs.getInt("forfeit"));
                 receipt.setTotal_payment(rs.getInt("total_payment"));
@@ -99,8 +103,10 @@ public class ReceiptModel implements ICommon<Receipt> {
             pstmt.setInt(1, obj.getContract_id());
             pstmt.setInt(2, obj.getYear());
             pstmt.setInt(3, obj.getMonth());
-            pstmt.setInt(4, obj.getElectric());
-            pstmt.setInt(5, obj.getWater());
+            pstmt.setInt(4, obj.getElectricOld());
+            pstmt.setInt(4, obj.getElectricNew());
+            pstmt.setInt(5, obj.getWaterOld());
+            pstmt.setInt(5, obj.getWaterNew());
             pstmt.setInt(6, obj.getService());
             pstmt.setInt(7, obj.getForfeit());
             pstmt.setInt(8, obj.getTotal_payment());
@@ -130,8 +136,10 @@ public class ReceiptModel implements ICommon<Receipt> {
 
             pstmt.setInt(1, obj.getYear());
             pstmt.setInt(2, obj.getMonth());
-            pstmt.setInt(3, obj.getElectric());
-            pstmt.setInt(4, obj.getWater());
+            pstmt.setInt(3, obj.getElectricOld());
+            pstmt.setInt(3, obj.getElectricNew());
+            pstmt.setInt(4, obj.getWaterOld());
+            pstmt.setInt(4, obj.getWaterNew());
             pstmt.setInt(5, obj.getService());
             pstmt.setInt(6, obj.getForfeit());
             pstmt.setInt(7, obj.getTotal_payment());
