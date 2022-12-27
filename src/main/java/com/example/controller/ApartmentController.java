@@ -2,6 +2,7 @@ package com.example.controller;
 
 import com.example.entity.Apartment;
 import com.example.model.ApartmentModel;
+import javafx.beans.Observable;
 import javafx.collections.ObservableList;
 import javafx.css.PseudoClass;
 import javafx.event.ActionEvent;
@@ -84,6 +85,11 @@ public class ApartmentController implements Initializable {
                         EditBtn.setOnAction((ActionEvent event) -> {
 
                             try {
+                                TableRow row = this.getTableRow();
+                                System.out.println(row.getItem());
+
+//                                ObservableList<Apartment> apartment = apartment_table.getItems();
+//                                System.out.println(apartment.get(0));
                                 URL url = Paths.get("src/main/resources/com/example/projectjava/ApartmentDetail.fxml").toUri().toURL();
                                 Parent parent = FXMLLoader.load(url);
 
