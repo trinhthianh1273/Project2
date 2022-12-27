@@ -12,6 +12,9 @@ create table apartment(
 insert into apartment(name, floor_quanty, room_quanty)
 values("HUD3", 9, 40);
 
+insert into apartment(name, floor_quanty, room_quanty)
+values("HUD4", 9, 40);
+
 create table room(
                      id int(5) not null auto_increment primary key,
                      apartment_id int(5) not null,
