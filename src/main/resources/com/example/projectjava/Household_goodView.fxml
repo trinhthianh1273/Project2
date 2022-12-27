@@ -61,13 +61,13 @@
             <Insets left="100.0" right="100.0" />
          </opaqueInsets>
       </HBox>
-      <TableView prefHeight="200.0" prefWidth="200.0">
+      <TableView nodeOrientation="LEFT_TO_RIGHT" prefHeight="454.0" prefWidth="971.0">
         <columns>
           <TableColumn prefWidth="171.99999487400055" text="ItemId" />
-          <TableColumn prefWidth="218.6667022705078" text="ItemName" />
-            <TableColumn prefWidth="90.66670227050781" text="Quantity" />
-            <TableColumn prefWidth="89.33331298828125" text="Available" />
-            <TableColumn minWidth="6.6666259765625" prefWidth="58.66668701171875" text="C2" />
+          <TableColumn prefWidth="206.00006103515625" text="ItemName" />
+            <TableColumn prefWidth="104.6666259765625" text="Quantity" />
+            <TableColumn prefWidth="147.3333740234375" text="Available" />
+            <TableColumn minWidth="6.6666259765625" prefWidth="141.3333740234375" text="C2" />
         </columns>
          <VBox.margin>
             <Insets left="100.0" right="100.0" />
