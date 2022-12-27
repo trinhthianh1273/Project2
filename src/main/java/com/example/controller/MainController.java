@@ -176,6 +176,7 @@ public class MainController implements Initializable {
 
     @FXML
     void show_household_good(MouseEvent event) throws IOException {
+        System.out.println("apartment view");
         URL url_content = Paths.get("src/main/resources/com/example/projectjava/Household_goodView.fxml").toUri().toURL();
         Parent content = FXMLLoader.load(url_content);
         border_pane.setRight(content);
