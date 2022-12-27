@@ -7,7 +7,6 @@
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
@@ -33,21 +32,21 @@
                <children>
                   <FontAwesomeIconView icon="ICON_HOME" />
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="TotalContract" />
-                  <TextField />
+                  <Label id="TotalContract" />
                </children>
             </HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="261.0">
                <children>
                   <FontAwesomeIconView icon="ICON_USER" />
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Renting" />
-                  <TextField />
+                  <Label id="Renting" />
                </children>
             </HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                <children>
                   <FontAwesomeIconView icon="ICON_TRASH" />
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Expired" />
-                  <TextField alignment="CENTER" />
+                  <Label id="Expired" />
                </children>
             </HBox>
          </children>
