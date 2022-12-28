@@ -3,13 +3,16 @@
 }
 
 .table-view {
-    -fx-background-color: rgb(158, 179, 243);
+    /*-fx-background-color: rgb(158, 179, 243);*/
+    /*-fx-background-color: #a999f1;*/
+    -fx-background-color: transparent;
+    -fx-border-bottom-color: #d8d4ea;
 }
 
 /* góc thẻ tiêu đề */
 .table-view .column-header-background .filler {
-    /*-fx-background-color: transparent;*/
-    -fx-background-color: rgb(158, 179, 243);
+    -fx-background-color: #d8d4ea;
+    /*-fx-background-color: rgb(194, 248, 198);*/
 }
 
 /* The bottom right corner between the scrollbars */
@@ -18,20 +21,22 @@
 }
 
 .table-view .column-header-background{
-    /*-fx-background-color: linear-gradient(to bottom, #1dbbdd44, #93f9b944);*/
+    /*-fx-background-color: linear-gradient(to bottom, #e1ccfc, #f2e5fa);*/
+    -fx-background-color: linear-gradient(to bottom, #f6f2fc, #faf8fc);
     -fx-background-radius: 7px 7px 0px 0px;
     -fx-background-insets: 0 11px 0 0;
-    -fx-padding: 0 0 5px 0;
+    -fx-padding: 0 0 0 0;
 }
 
 /* Column Headers riêng lẻ */
 .table-view .column-header {
     -fx-background-color: transparent;
+    -fx-border-color: #d8d4ea;
 }
 
 /* cells & rows */
 .table-view .table-cell{
-    -fx-border-color: transparent;
+    -fx-border-color: #d8d4ea;
     -fx-padding: 2 0 2 10px;
 }
 .table-row-cell:hover {
@@ -39,12 +44,12 @@
     -fx-text-background-color: black;
 }
 .table-row-cell:odd{
-    -fx-background-color: #93f9b911;
+    /*-fx-background-color: #93f9b911;*/
     -fx-background-insets: 0, 0 0 1 0;
     -fx-padding: 0.0em;
 }
 .table-row-cell:even{
-    -fx-background-color: #1dbbdd11;
+    /*-fx-background-color: rgba(237, 204, 250, 0.68);*/
     -fx-background-insets: 0, 0 0 1 0;
     -fx-padding: 0.0em;
 }
@@ -69,13 +74,20 @@
 
 /* .thumb: tham chiếu tới scrollbar */
 .table-view .virtual-flow .scroll-bar:vertical .thumb{
-    -fx-background-color:  linear-gradient(to bottom, #1dbbdd44, #93f9b944);
+    -fx-background-color:  linear-gradient(to bottom, rgba(226, 202, 245, 0.4), rgba(234, 201, 252, 0.56));
 }
 .table-view .virtual-flow .scroll-bar:horizontal .thumb {
-    -fx-background-color:  linear-gradient(to right, #1dbbdd44, #93f9b944);
+    -fx-background-color:  linear-gradient(to right, rgba(226, 202, 245, 0.4), rgba(234, 201, 252, 0.56));
 }
 
-.table-row-cell:highlighted {
-    -fx-background-color: #81c483;
-    -fx-background-radius: 15px;
+.icon {
+    -fx-fill: pink;
 }
+
+.add-view-btn {
+
+    /*-fx-border-radius: 12px;*/
+    -fx-border-color:  #a999f1;
+    -fx-background-color:  #d8d4ea;
+    -fx-cursor: hand;
+  }

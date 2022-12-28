@@ -22,6 +22,13 @@ public class Contract {
     private int black;
     private int status;
 
+    private String room_name;
+    private String apartment_name;
+    private String Owner;
+    private String renter1S;
+    private String renter2S;
+    private String renter3S;
+
     public Contract() {
     }
 
@@ -64,6 +71,16 @@ public class Contract {
         this.endDate = endDate;
         this.black = black;
         this.status = status;
+    }
+
+    public Contract(int id, Date startDate, Date endDate, int status, String room_name, String apartment_name, String owner) {
+        this.id = id;
+        this.startDate = startDate;
+        this.endDate = endDate;
+        this.status = status;
+        this.room_name = room_name;
+        this.apartment_name = apartment_name;
+        Owner = owner;
     }
 
     public int getId() {
@@ -210,9 +227,57 @@ public class Contract {
         this.status = status;
     }
 
+    public String getOwner() {
+        return Owner;
+    }
+
+    public void setOwner(String owner) {
+        Owner = owner;
+    }
+
+    public String getRenter1S() {
+        return renter1S;
+    }
+
+    public void setRenter1S(String renter1S) {
+        this.renter1S = renter1S;
+    }
+
+    public String getRenter2S() {
+        return renter2S;
+    }
+
+    public void setRenter2S(String renter2S) {
+        this.renter2S = renter2S;
+    }
+
+    public String getRenter3S() {
+        return renter3S;
+    }
+
+    public void setRenter3S(String renter3S) {
+        this.renter3S = renter3S;
+    }
+
+    public String getRoom_name() {
+        return room_name;
+    }
+
+    public void setRoom_name(String room_name) {
+        this.room_name = room_name;
+    }
+
+    public String getApartment_name() {
+        return apartment_name;
+    }
+
+    public void setApartment_name(String apartment_name) {
+        this.apartment_name = apartment_name;
+    }
+
     @Override
     public String toString() {
-        return "contract{" +
+        return "Contract{" +
                 "id=" + id +
                 ", room_id=" + room_id +
                 ", proxy_id=" + proxy_id +
@@ -231,6 +296,12 @@ public class Contract {
                 ", endDate=" + endDate +
                 ", black=" + black +
                 ", status=" + status +
+                ", room_name='" + room_name + '\'' +
+                ", apartment_name='" + apartment_name + '\'' +
+                ", Owner='" + Owner + '\'' +
+                ", renter1S='" + renter1S + '\'' +
+                ", renter2S='" + renter2S + '\'' +
+                ", renter3S='" + renter3S + '\'' +
                 '}' + "\n";
     }
 }
