@@ -13,7 +13,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("ContractView.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Main.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         stage.setScene(scene);
         scene.getStylesheets().add(getClass().getResource("asset/css/sidebar.css").toExternalForm());
