@@ -77,6 +77,30 @@ public class RoomModel implements ICommon<Room> {
         return room;
     }
 
+    public ObservableList<String> getRoomNameByApartment(String apartmentName) {
+        ObservableList<String> list = FXCollections.observableArrayList();
+        String sql = "select room.name as name from " + this.table +
+                " inner join apartment on room.apartment_id = apartment.id " +
+                "where apartment.name = ?";
+        try {
+            conn = DBConnect.getConnect();
+            pstmt = conn.prepareStatement(sql);
+            pstmt.setString(1, apartmentName);
+            rs= pstmt.executeQuery();
+
+            while (rs.next()) {
+                list.add(rs.getString("name"));
+            }
+        } catch (SQLException e) {
+
+        } finally {
+            DBConnect.closeResultSet(rs);
+            DBConnect.closePreparedStatement(pstmt);
+            DBConnect.closeConnect(conn);
+        }
+        return list;
+    }
+
     public ObservableList<Room> getAllByFloor(int floor){
         ObservableList<Room> list = FXCollections.observableArrayList();
         String sql = "Select * from " + this.table + " where floor = ?";

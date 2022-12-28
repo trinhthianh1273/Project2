@@ -42,8 +42,6 @@ public class MainController implements Initializable {
     @FXML
     private Label apartment;
 
-    @FXML
-    private HBox apartment_link;
 
     @FXML
     private BorderPane border_pane;
@@ -52,19 +50,21 @@ public class MainController implements Initializable {
     private Label contract;
 
     @FXML
-    private HBox contract_link;
+    private Button contract_link;
 
     @FXML
     private Label dashboard;
 
     @FXML
-    private HBox dashboard_link;
+    private Button dashboard_link;
+    @FXML
+    private Button apartment_link;
 
     @FXML
     private Label household_good;
 
     @FXML
-    private HBox household_good_link;
+    private Button household_good_link;
 
     @FXML
     private ImageView logo;
@@ -73,37 +73,37 @@ public class MainController implements Initializable {
     private Label manager;
 
     @FXML
-    private HBox manager_link;
+    private Button manager_link;
 
     @FXML
     private Label receipt;
 
     @FXML
-    private HBox receipt_link;
+    private Button receipt_link;
 
     @FXML
     private Label renter;
 
     @FXML
-    private HBox renter_link;
+    private Button renter_link;
 
     @FXML
     private Label room;
 
     @FXML
-    private HBox room_link;
+    private Button room_link;
 
     @FXML
     private Label setting;
 
     @FXML
-    private HBox setting_link;
+    private Button setting_link;
 
     @FXML
     private VBox sidebar;
 
     @FXML
-    private Label signout;
+    private Button signout;
 
     @FXML
     private Text userSessionName;
