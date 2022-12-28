@@ -1,13 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.gluonhq.charm.glisten.control.Icon?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.text.TextFlow?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="657.0" prefWidth="974.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="657.0" prefWidth="974.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+      <HBox alignment="CENTER_LEFT" prefHeight="96.0" prefWidth="974.0">
          <children>
             <VBox alignment="CENTER" prefHeight="100.0" prefWidth="199.0">
                <children>
@@ -25,6 +33,74 @@
             </VBox>
          </children>
       </HBox>
-      <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" />
+      <HBox alignment="CENTER_LEFT" prefHeight="225.0" prefWidth="974.0">
+         <children>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <TextFlow prefHeight="138.0" prefWidth="200.0">
+                     <children>
+                        <Icon content="PERSON_ADD" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Available Room" wrappingWidth="39.983070373535156" />
+                     </children>
+                  </TextFlow>
+               </children>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <TextFlow prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <Icon content="ROOM_SERVICE" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Payment" wrappingWidth="39.983070373535156" />
+                     </children>
+                  </TextFlow>
+               </children>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <TextFlow prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <Icon content="GROUP" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Renter Room" wrappingWidth="39.983070373535156" />
+                     </children>
+                  </TextFlow>
+               </children>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <TextFlow prefHeight="225.0" prefWidth="267.0">
+                     <children>
+                        <Icon content="POLL" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Total money " wrappingWidth="39.983070373535156" />
+                     </children>
+                  </TextFlow>
+               </children>
+            </HBox>
+            <TextFlow prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <Icon content="ERROR" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Furniture in need of repair" wrappingWidth="39.983070373535156" />
+               </children>
+            </TextFlow>
+         </children></HBox>
+      <TableView fx:id="apartment_table" prefHeight="138.0" prefWidth="974.0" stylesheets="@asset/css/main.css">
+         <columns>
+            <TableColumn fx:id="id" prefWidth="84.79997253417969" text="ID" />
+            <TableColumn fx:id="name" prefWidth="160.0" text="Name" />
+            <TableColumn fx:id="floor_quanty" prefWidth="229.0" text="Floor_quanty" />
+            <TableColumn fx:id="room_quanty" prefWidth="89.60003662109375" text="Room_quanty" />
+            <TableColumn fx:id="Action" prefWidth="116.79998779296875" text="Action" />
+         </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+      </TableView>
+      <LineChart>
+        <xAxis>
+          <CategoryAxis side="BOTTOM" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis side="LEFT" />
+        </yAxis>
+      </LineChart>
    </children>
 </VBox>
