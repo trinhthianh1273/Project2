@@ -10,7 +10,7 @@
 <?import javafx.scene.text.Text?>
 <?import javafx.scene.text.TextFlow?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="657.0" prefWidth="974.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="657.0" prefWidth="974.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <HBox alignment="CENTER_LEFT" prefHeight="96.0" prefWidth="974.0">
          <children>
@@ -37,7 +37,7 @@
                   <TextFlow prefHeight="138.0" prefWidth="200.0">
                      <children>
                         <Icon content="PERSON_ADD" />
-                        <Text  strokeType="OUTSIDE" strokeWidth="0.0" text="Available Room" wrappingWidth="39.983070373535156" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Available Room" wrappingWidth="39.983070373535156" />
                      </children>
                   </TextFlow>
                </children>

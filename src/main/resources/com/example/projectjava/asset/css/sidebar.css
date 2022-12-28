@@ -1,5 +1,6 @@
 .sidebar {
-    -fx-background-color: rgb(158, 179, 243);
+    /*-fx-background-color: rgb(158, 179, 243);*/
+    -fx-background-color: #EBE8F9;
 }
 
 .sidebar-user-btn {
@@ -15,8 +16,10 @@
 .sidebar-btn:hover {
     -fx-background-color: transparent;
     -fx-background-radius: 0px;
-    -fx-border-color: rgb(22, 169, 250);
+    /*-fx-border-color: rgb(22, 169, 250);*/
+    -fx-border-color: #cbc3e7;
     -fx-border-width: 0px 0px 0px 3px;
+    -fx-cursor: hand;
 }
 
 FontAwesomeIconView {
@@ -28,8 +31,10 @@ FontAwesomeIconView {
 }
 
 .sidebar-btn-active {
-    -fx-background-color: #4986ef;
+    /*-fx-background-color: #4986ef;*/
+    -fx-background-color: #cbc3e7;
     -fx-background-radius: 0px;
-    -fx-border-color: rgb(22, 169, 250);
+    /*-fx-border-color: rgb(22, 169, 250);*/
+    -fx-border-color: #8e86bb;
     -fx-border-width: 0px 0px 0px 3px;
 }
