@@ -31,6 +31,7 @@
                         <FontAwesomeIconView icon="ICON_HOME" />
                      </graphic>
                   </Label>
+                  <Label id="TotalItem" />
                </children>
             </VBox>
             <VBox alignment="CENTER" prefHeight="100.0" prefWidth="311.0">
@@ -41,16 +42,18 @@
                         <FontAwesomeIconView icon="ICON_PLUS" prefHeight="0.0" prefWidth="21.0" />
                      </graphic>
                   </Label>
+                  <Label id="InUse" />
                </children>
             </VBox>
             <VBox alignment="CENTER" prefHeight="100.0" prefWidth="327.0">
                <children>
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" />
-                  <Label alignment="CENTER" text="Avalible" textAlignment="JUSTIFY">
+                  <Label id="Avalible" alignment="CENTER" text="Avalible" textAlignment="JUSTIFY">
                      <graphic>
                         <FontAwesomeIconView icon="ICON_MINUS_SIGN" />
                      </graphic>
                   </Label>
+                  <Label />
                </children>
                <opaqueInsets>
                   <Insets left="100.0" />

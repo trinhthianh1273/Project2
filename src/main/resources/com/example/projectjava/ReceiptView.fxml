@@ -61,6 +61,7 @@
                   <TableColumn minWidth="0.0" prefWidth="134.6666259765625" text="Button" />
               </columns>
             </TableView>
+            <Label id="TotalReceipt" layoutX="112.0" layoutY="74.0" />
          </children>
       </AnchorPane>
    </children>
