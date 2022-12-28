@@ -30,23 +30,32 @@
          <children>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                <children>
-                   <FontAwesomeIconView icon="ICON_STAR" />
-                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="TotalContract" />
-                  <Label id="TotalContract " />
+                   <Text fx:id="TotalContract" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+                   <Label text="TotalContract">
+                       <graphic>
+                           <FontAwesomeIconView icon="ICON_STAR" />
+                       </graphic>
+                   </Label>
                </children>
             </HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="261.0">
                <children>
-                  <FontAwesomeIconView icon="ICON_USER" />
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Renting" />
-                  <Label id="Renting" />
+                   <Text fx:id="Renting" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+                   <Label text="Renting">
+                       <graphic>
+                           <FontAwesomeIconView icon="ICON_USER" />
+                       </graphic>
+                   </Label>
                </children>
             </HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <FontAwesomeIconView icon="ICON_TRASH" />
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Expired" />
-                  <Label id="Expired" />
+                   <Text fx:id="Expirred" strokeType="OUTSIDE" strokeWidth="0.0" text="Expirred" />
+                   <Label text="Expirred">
+                       <graphic>
+                           <FontAwesomeIconView icon="ICON_TRASH" />
+                       </graphic>
+                   </Label>
                </children>
             </HBox>
          </children>
