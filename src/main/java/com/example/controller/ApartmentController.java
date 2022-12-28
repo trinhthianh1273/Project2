@@ -2,6 +2,7 @@ package com.example.controller;
 
 import com.example.entity.Apartment;
 import com.example.model.ApartmentModel;
+import javafx.beans.Observable;
 import javafx.collections.ObservableList;
 import javafx.css.PseudoClass;
 import javafx.event.ActionEvent;
@@ -12,6 +13,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
@@ -48,9 +50,24 @@ public class ApartmentController implements Initializable {
     @FXML
     private TableColumn<Apartment, Void> Action;
 
+    @FXML
+    private Label apartment_total;
+    @FXML
+    private Label best_revenued;
+    @FXML
+    private Label renter_total;
+    @FXML
+    private Label room_total;
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
+        apartment_total.setText(String.valueOf(new ApartmentModel().apartmentTotal()));
+        room_total.setText(String.valueOf(new ApartmentModel().roomTotal()));
+        renter_total.setText(String.valueOf(new ApartmentModel().renterTotal()));
+        best_revenued.setText(new ApartmentModel().bestRevenued());
+
         apartment_table.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
 
         id.setCellValueFactory(new PropertyValueFactory<>("id"));
@@ -84,8 +101,18 @@ public class ApartmentController implements Initializable {
                         EditBtn.setOnAction((ActionEvent event) -> {
 
                             try {
-                                URL url = Paths.get("src/main/resources/com/example/projectjava/ApartmentDetail.fxml").toUri().toURL();
-                                Parent parent = FXMLLoader.load(url);
+                                TableRow row = this.getTableRow();
+                                Apartment a = (Apartment) row.getItem();
+
+//                                ObservableList<Apartment> apartment = apartment_table.getItems();
+//                                System.out.println(apartment.get(0));
+                                    URL url = Paths.get("src/main/resources/com/example/projectjava/ApartmentDetail.fxml").toUri().toURL();
+                                FXMLLoader loader = new FXMLLoader();
+                                loader.setLocation(url);
+                                Parent parent = loader.load();
+
+                                ApartmentDetailController apartmentDetailController = loader.getController();
+                                apartmentDetailController.setApartment(a);
 
                                 Stage stage = new Stage();
                                 stage.setScene(new Scene(parent));
@@ -96,6 +123,7 @@ public class ApartmentController implements Initializable {
                             }
                         });
                     }
+                    
 
                     {
                         RemoveBtn.setOnAction((ActionEvent event) -> {
@@ -122,5 +150,23 @@ public class ApartmentController implements Initializable {
         Action.setCellFactory(cellFactory);
 
 //        apartment_table.getColumns().addAll(colBtn);
+    }
+
+
+    @FXML
+    void add(MouseEvent event) throws IOException {
+        URL url = Paths.get("src/main/resources/com/example/projectjava/ApartmentAddView.fxml").toUri().toURL();
+        Parent parent = FXMLLoader.load(url);
+
+        Stage stage = new Stage();
+        stage.setScene(new Scene(parent));
+        stage.initStyle(StageStyle.UTILITY);
+        stage.show();
+    }
+
+    @FXML
+    void refesh(MouseEvent event) {
+        ObservableList<Apartment> list = new ApartmentModel().getAll();
+        apartment_table.getItems().setAll(list);
     }
 }

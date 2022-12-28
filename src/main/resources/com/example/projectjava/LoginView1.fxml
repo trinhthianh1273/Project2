@@ -19,7 +19,7 @@
          <image>
             <Image url="@../../../../../../../OneDrive/Pictures/Tranh/286909074_723858852000193_3628200865960896005_n.jpg" />
          </image></ImageView>
-      <VBox prefHeight="200.0" prefWidth="400.0">
+      <VBox prefHeight="200.0" prefWidth="400.0" style="-fx-background-color: white;">
          <children>
             <Label text="Wellcome">
                <VBox.margin>

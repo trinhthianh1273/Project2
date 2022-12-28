@@ -1,97 +1,119 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.cathive.fonts.fontawesome.FontAwesomeIconView?>
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<VBox fx:id="VBox" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="488.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.controller.ApartmentDetailController">
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="520.0" prefWidth="800.0" stylesheets="@asset/css/login.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.controller.ApartmentDetailController">
    <children>
-      <HBox fx:id="TitleBox" alignment="CENTER_LEFT" prefHeight="84.0" prefWidth="480.0">
+      <ImageView fitHeight="520.0" fitWidth="400.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../../../OneDrive/Pictures/Tranh/286909074_723858852000193_3628200865960896005_n.jpg" />
+         </image>
+      </ImageView>
+      <VBox prefHeight="200.0" prefWidth="400.0" style="-fx-background-color: white;">
          <children>
-            <Label text="Apartment Detail">
-               <HBox.margin>
-                  <Insets left="24.0" />
-               </HBox.margin>
-               <font>
-                  <Font name="Kristen ITC" size="24.0" />
-               </font>
-            </Label>
+            <HBox fx:id="labelBox" alignment="CENTER_LEFT" prefHeight="110.0" prefWidth="400.0">
+               <children>
+                  <Label text="This is apartment detail">
+                     <HBox.margin>
+                        <Insets left="24.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font size="22.0" />
+                     </font>
+                     <graphic>
+                        <FontAwesomeIconView icon="ICON_HOME">
+                           <padding>
+                              <Insets right="12.0" />
+                           </padding>
+                        </FontAwesomeIconView>
+                     </graphic>
+                  </Label>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="24.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="144.0" prefHeight="55.0" prefWidth="400.0">
+               <children>
+                  <Label prefWidth="120.0" text="ID: ">
+                     <HBox.margin>
+                        <Insets left="36.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="id" text="Label">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="144.0" prefHeight="55.0" prefWidth="400.0">
+               <children>
+                  <Label prefWidth="120.0" text="Name: ">
+                     <HBox.margin>
+                        <Insets left="36.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="name" text="Label">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="324.0" prefHeight="55.0" prefWidth="400.0">
+               <children>
+                  <Label prefWidth="120.0" text="Floor_quanty:">
+                     <HBox.margin>
+                        <Insets left="36.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="floor_quanty" text="Label">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="379.0" prefHeight="55.0" prefWidth="400.0">
+               <children>
+                  <Label prefWidth="120.0" text="Room_quanty: ">
+                     <HBox.margin>
+                        <Insets left="36.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="room_quanty" text="Label">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+               <VBox.margin>
+                  <Insets top="24.0" />
+               </VBox.margin>
+            </HBox>
          </children>
-      </HBox>
-      <HBox alignment="CENTER_LEFT" prefHeight="62.0" prefWidth="480.0">
-         <children>
-            <Label prefWidth="100.0" text="ID: ">
-               <font>
-                  <Font size="14.0" />
-               </font>
-               <HBox.margin>
-                  <Insets left="36.0" />
-               </HBox.margin>
-            </Label>
-            <Label fx:id="id" layoutX="10.0" layoutY="25.0" text="Label">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Label>
-         </children>
-      </HBox>
-      <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="69.0" prefHeight="62.0" prefWidth="480.0">
-         <children>
-            <Label prefWidth="100.0" text="Name: ">
-               <font>
-                  <Font size="14.0" />
-               </font>
-               <HBox.margin>
-                  <Insets left="36.0" />
-               </HBox.margin>
-            </Label>
-            <TextField fx:id="name" />
-         </children>
-      </HBox>
-      <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="117.0" prefHeight="62.0" prefWidth="480.0">
-         <children>
-            <Label prefHeight="100.0" text="Floor Quanty : ">
-               <font>
-                  <Font size="14.0" />
-               </font>
-               <HBox.margin>
-                  <Insets left="36.0" />
-               </HBox.margin>
-            </Label>
-            <Label fx:id="floor_quanty" layoutX="10.0" layoutY="25.0" />
-         </children>
-      </HBox>
-      <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="165.0" prefHeight="62.0" prefWidth="480.0">
-         <children>
-            <Label prefWidth="100.0" text="Room Quanty: ">
-               <font>
-                  <Font size="14.0" />
-               </font>
-               <HBox.margin>
-                  <Insets left="36.0" />
-               </HBox.margin>
-            </Label>
-            <Label fx:id="room_quanty" layoutX="10.0" layoutY="25.0" />
-         </children>
-      </HBox>
-      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
-         <children>
-            <Button mnemonicParsing="false" text="Update">
-               <HBox.margin>
-                  <Insets right="24.0" />
-               </HBox.margin>
-            </Button>
-            <Button mnemonicParsing="false" text="Exit">
-               <HBox.margin>
-                  <Insets left="24.0" />
-               </HBox.margin>
-            </Button>
-         </children>
-      </HBox>
+      </VBox>
    </children>
-</VBox>
+</HBox>
