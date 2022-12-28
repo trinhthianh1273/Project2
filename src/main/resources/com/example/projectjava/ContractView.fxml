@@ -131,10 +131,10 @@
             <children>
                 <TableView fx:id="contract_table" prefHeight="429.0" prefWidth="763.0">
                     <columns>
-                        <TableColumn fx:id="contract_id" prefWidth="63.99999713897705" text="ContractId" />
-                        <TableColumn fx:id="apartment_name" prefWidth="77.5999755859375" text="Apartment" />
-                        <TableColumn fx:id="room_name" prefWidth="83.20001220703125" text="Room" />
-                        <TableColumn fx:id="owner" prefWidth="244.00003051757812" text="Owner" />
+                        <TableColumn fx:id="contract_id" prefWidth="80.7999849319458" text="ContractId" />
+                        <TableColumn fx:id="apartment_name" text="Apartment" />
+                        <TableColumn fx:id="room_name" prefWidth="83.99998474121094" text="Room" />
+                        <TableColumn fx:id="owner" prefWidth="227.20001220703125" text="Owner" />
                         <TableColumn fx:id="startDate" prefWidth="148.0" text="StartDate" />
                         <TableColumn fx:id="endDate" prefWidth="131.19989013671875" text="EndDate" />
                         <TableColumn fx:id="status" prefWidth="76.7999267578125" text="Status" />

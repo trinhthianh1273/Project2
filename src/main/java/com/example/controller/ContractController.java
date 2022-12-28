@@ -1,5 +1,6 @@
 package com.example.controller;
 
+import com.example.entity.Apartment;
 import com.example.entity.Contract;
 import com.example.model.ApartmentModel;
 import com.example.model.ContractModel;
@@ -91,6 +92,13 @@ public class ContractController implements Initializable {
             }
         });
 
+        roomBox.valueProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observableValue, String s, String t1) {
+                nameRoomSelected = roomBox.getValue();
+            }
+        });
+
         roomBox.setPromptText("Search Room");
     }
 
@@ -102,11 +110,21 @@ public class ContractController implements Initializable {
 
     @FXML
     void refesh(MouseEvent event) {
-
+        ObservableList<Contract> list = new ContractModel().getAll();
+        contract_table.getItems().setAll(list);
     }
 
     @FXML
     void search(MouseEvent event) {
+        System.out.println(nameApartmentSelected);
+        System.out.println(nameRoomSelected);
+        if (nameApartmentSelected != null) {
+            if(nameRoomSelected != null) {
 
+            } else {
+                ObservableList<Contract> list = new ContractModel().getAllBriefByApartment(nameApartmentSelected);
+                contract_table.setItems(list);
+            }
+        }
     }
 }
