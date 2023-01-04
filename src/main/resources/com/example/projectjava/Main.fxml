@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.cathive.fonts.fontawesome.FontAwesomeIconView?>
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane fx:id="border_pane" prefHeight="657.0" prefWidth="1260.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.controller.MainController">
+   <left>
+      <VBox fx:id="sidebar" alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="657.0" prefWidth="292.0" styleClass="sidebar" stylesheets="@asset/css/sidebar.css" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fx:id="logo" fitHeight="92.0" fitWidth="154.0" pickOnBounds="true" preserveRatio="true">
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+               <image>
+                  <Image url="@asset/img/group1-real-estate-high-resolution-logo-color-on-transparent-background%20(1).png" />
+               </image>
+            </ImageView>
+            <Text fx:id="userSessionName" strokeType="OUTSIDE" strokeWidth="0.0">
+               <VBox.margin>
+                  <Insets bottom="12.0" top="12.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="Gabriola" size="24.0" />
+               </font>
+            </Text>
+            <Button fx:id="dashboard_link" alignment="BASELINE_LEFT" mnemonicParsing="false" onMouseClicked="#show_dashboard" prefHeight="38.0" prefWidth="292.0" stylesheets="@asset/css/sidebar.css" text="Dashboard">
+               <graphic>
+                  <FontAwesomeIconView icon="ICON_DASHBOARD">
+                     <padding>
+                        <Insets left="24.0" right="12.0" />
+                     </padding>
+                  </FontAwesomeIconView>
+               </graphic>
+               <font>
+                  <Font name="Gabriola" size="20.0" />
+               </font>
+               <styleClass>
+                  <String fx:value="sidebar-btn" />
+                  <String fx:value="sidebar-btn-active" />
+               </styleClass>
+            </Button>
+            <Button fx:id="apartment_link" alignment="BASELINE_LEFT" layoutX="10.0" layoutY="170.0" mnemonicParsing="false" onMouseClicked="#show_apartment" prefHeight="38.0" prefWidth="292.0" styleClass="sidebar-btn" stylesheets="@asset/css/sidebar.css" text="Apartment Management">
+               <font>
+                  <Font name="Gabriola" size="20.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIconView icon="ICON_HOME" styleClass="sidebar-btn-icon">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                     <padding>
+                        <Insets left="24.0" right="12.0" />
+                     </padding>
+                  </FontAwesomeIconView>
+               </graphic>
+            </Button>
+            <Button fx:id="room_link" alignment="BASELINE_LEFT" layoutX="10.0" layoutY="218.0" mnemonicParsing="false" onMouseClicked="#show_room" prefHeight="38.0" prefWidth="292.0" styleClass="sidebar-btn" stylesheets="@asset/css/sidebar.css" text="Room Management">
+               <font>
+                  <Font name="Gabriola" size="20.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIconView icon="ICON_LIST" styleClass="sidebar-btn-icon">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                     <padding>
+                        <Insets left="24.0" right="12.0" />
+                     </padding>
+                  </FontAwesomeIconView>
+               </graphic>
+            </Button>
+            <Button fx:id="renter_link" alignment="BASELINE_LEFT" layoutX="10.0" layoutY="266.0" mnemonicParsing="false" onMouseClicked="#show_renter" prefHeight="38.0" prefWidth="292.0" styleClass="sidebar-btn" stylesheets="@asset/css/sidebar.css" text="Renter Management">
+               <font>
+                  <Font name="Gabriola" size="20.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIconView icon="ICON_USER" styleClass="sidebar-btn-icon">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                     <padding>
+                        <Insets left="24.0" right="12.0" />
+                     </padding>
+                  </FontAwesomeIconView>
+               </graphic>
+            </Button>
+            <Button fx:id="contract_link" alignment="BASELINE_LEFT" layoutX="10.0" layoutY="314.0" mnemonicParsing="false" onMouseClicked="#show_contract" prefHeight="38.0" prefWidth="292.0" styleClass="sidebar-btn" stylesheets="@asset/css/sidebar.css" text="Contract Management">
+               <font>
+                  <Font name="Gabriola" size="20.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIconView icon="ICON_BOOK" styleClass="sidebar-btn-icon">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                     <padding>
+                        <Insets left="24.0" right="12.0" />
+                     </padding>
+                  </FontAwesomeIconView>
+               </graphic>
+            </Button>
+            <Button fx:id="receipt_link" alignment="BASELINE_LEFT" layoutX="10.0" layoutY="362.0" mnemonicParsing="false" onMouseClicked="#show_receipt" prefHeight="38.0" prefWidth="292.0" styleClass="sidebar-btn" stylesheets="@asset/css/sidebar.css" text="Receipt Management">
+               <font>
+                  <Font name="Gabriola" size="20.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIconView icon="ICON_INBOX" styleClass="sidebar-btn-icon">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                     <padding>
+                        <Insets left="24.0" right="12.0" />
+                     </padding>
+                  </FontAwesomeIconView>
+               </graphic>
+            </Button>
+            <Button fx:id="household_good_link" alignment="BASELINE_LEFT" layoutX="10.0" layoutY="410.0" mnemonicParsing="false" onMouseClicked="#show_household_good" prefHeight="38.0" prefWidth="292.0" styleClass="sidebar-btn" stylesheets="@asset/css/sidebar.css" text="Household Good">
+               <font>
+                  <Font name="Gabriola" size="20.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIconView icon="ICON_TABLE" styleClass="sidebar-btn-icon">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                     <padding>
+                        <Insets left="24.0" right="12.0" />
+                     </padding>
+                  </FontAwesomeIconView>
+               </graphic>
+            </Button>
+            <Button fx:id="manager_link" alignment="BASELINE_LEFT" layoutX="10.0" layoutY="458.0" mnemonicParsing="false" onMouseClicked="#show_manager" prefHeight="38.0" prefWidth="292.0" styleClass="sidebar-btn" stylesheets="@asset/css/sidebar.css" text="Manager Management">
+               <font>
+                  <Font name="Gabriola" size="20.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIconView icon="ICON_USER_MD" styleClass="sidebar-btn-icon">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                     <padding>
+                        <Insets left="24.0" right="12.0" />
+                     </padding>
+                  </FontAwesomeIconView>
+               </graphic>
+            </Button>
+            <Button fx:id="setting_link" alignment="BASELINE_LEFT" layoutX="10.0" layoutY="506.0" mnemonicParsing="false" onMouseClicked="#show_setting" prefHeight="38.0" prefWidth="292.0" styleClass="sidebar-btn" stylesheets="@asset/css/sidebar.css" text="Setting">
+               <font>
+                  <Font name="Gabriola" size="20.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIconView icon="ICON_WRENCH" styleClass="sidebar-btn-icon">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                     <padding>
+                        <Insets left="24.0" right="12.0" />
+                     </padding>
+                  </FontAwesomeIconView>
+               </graphic>
+            </Button>
+            <Button fx:id="signout" alignment="BASELINE_LEFT" layoutX="10.0" layoutY="554.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="292.0" styleClass="sidebar-btn" stylesheets="@asset/css/sidebar.css" text="Sign out">
+               <font>
+                  <Font name="Gabriola" size="20.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIconView icon="ICON_WRENCH" styleClass="sidebar-btn-icon">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                     <padding>
+                        <Insets left="24.0" right="12.0" />
+                     </padding>
+                  </FontAwesomeIconView>
+               </graphic>
+            </Button>
+         </children>
+      </VBox>
+   </left>
+</BorderPane>

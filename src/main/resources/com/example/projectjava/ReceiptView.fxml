@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.gluonhq.charm.glisten.control.DropdownButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="657.0" prefWidth="974.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <Label fx:id="contract_label" text="Receipt Management" textFill="#757373">
+               <font>
+                  <Font size="24.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="12.0" />
+               </HBox.margin>
+            </Label>
+         </children>
+      </HBox>
+      <AnchorPane prefHeight="550.0" prefWidth="974.0">
+         <children>
+            <Text layoutX="89.0" layoutY="71.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TotalReceipt" />
+            <Label id="TotalReceipt" layoutX="98.0" layoutY="93.0" />
+            <HBox alignment="CENTER_LEFT" layoutY="143.0" prefHeight="100.0" prefWidth="676.0">
+               <children>
+                  <DropdownButton>
+                      <items>
+                          <MenuItem text="Choice 1" />
+                          <MenuItem text="Choice 2" />
+                          <MenuItem text="Choice 3" />
+                      </items>
+                  </DropdownButton>
+                  <DropdownButton id="BuildingSelection">
+                     <items>
+                        <MenuItem text="Choice 1" />
+                        <MenuItem text="Choice 2" />
+                        <MenuItem text="Choice 3" />
+                     </items>
+                  </DropdownButton>
+               </children>
+            </HBox>
+            <TableView layoutX="-1.0" layoutY="211.0" prefHeight="366.0" prefWidth="975.0">
+              <columns>
+                <TableColumn prefWidth="83.3333410024643" text="ReceiptId" />
+                <TableColumn minWidth="0.0" prefWidth="104.66666412353516" text="Creatdate" />
+                  <TableColumn minWidth="0.0" prefWidth="97.33329772949219" text="Updatedate" />
+                  <TableColumn minWidth="0.0" prefWidth="122.0" text="Status" />
+                  <TableColumn minWidth="0.0" prefWidth="98.66668701171875" text="Water" />
+                  <TableColumn minWidth="0.0" prefWidth="96.00003051757812" text="Electric" />
+                  <TableColumn minWidth="0.0" prefWidth="106.0" text="Service" />
+                  <TableColumn minWidth="0.0" prefWidth="126.6666259765625" text="Total" />
+                  <TableColumn minWidth="0.0" prefWidth="134.6666259765625" text="Button" />
+              </columns>
+            </TableView>
+            <Label id="TotalReceipt" layoutX="112.0" layoutY="74.0" />
+         </children>
+      </AnchorPane>
+   </children>
+</VBox>
