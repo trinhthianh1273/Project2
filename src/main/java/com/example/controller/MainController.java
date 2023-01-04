@@ -222,7 +222,7 @@ public class MainController implements Initializable {
 
         dashboard_link.getStyleClass().remove("sidebar-btn-active");
         room_link.getStyleClass().remove("sidebar-btn-active");
-        apartment.getStyleClass().remove("sidebar-btn-active");
+        apartment_link.getStyleClass().remove("sidebar-btn-active");
         renter_link.getStyleClass().remove("sidebar-btn-active");
         contract_link.getStyleClass().remove("sidebar-btn-active");
         household_good_link.getStyleClass().remove("sidebar-btn-active");

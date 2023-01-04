@@ -91,3 +91,8 @@
     -fx-background-color:  #d8d4ea;
     -fx-cursor: hand;
   }
+
+.combo-box {
+    -fx-border-color: black;
+}
+

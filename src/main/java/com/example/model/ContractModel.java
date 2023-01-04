@@ -97,6 +97,81 @@ public class ContractModel implements ICommon<Contract> {
         return list;
     }
 
+    public ObservableList<Contract> getAllBriefByApartment(String apartmentName) {
+        ObservableList<Contract> list = FXCollections.observableArrayList();
+        String sql = "select contract.id as id, apartment.name as apartment_name, room.name as room_name, renter.name as owner, startDate, endDate, contract.status as status from " + this.table +
+                " inner join renter on contract.proxy_id = renter.id " +
+                "inner join room on contract.room_id = room.id " +
+                "inner join apartment on room.apartment_id = apartment.id " +
+                "where apartment.name = ?";
+
+        try {
+            conn = DBConnect.getConnect();
+            pstmt = conn.prepareStatement(sql);
+            pstmt.setString(1, apartmentName);
+            rs= pstmt.executeQuery();
+
+            while (rs.next()) {
+                Contract contract = new Contract();
+
+                contract.setId(rs.getInt("id"));
+                contract.setRoom_name(rs.getString("room_name"));
+                contract.setApartment_name(rs.getString("apartment_name"));
+                contract.setOwner(rs.getString("owner"));
+                contract.setStartDate(rs.getDate("startDate"));
+                contract.setEndDate(rs.getDate("endDate"));
+                contract.setStatus(rs.getInt("status"));
+
+                list.add(contract);
+            }
+        } catch (SQLException e) {
+
+        } finally {
+            DBConnect.closeResultSet(rs);
+            DBConnect.closePreparedStatement(pstmt);
+            DBConnect.closeConnect(conn);
+        }
+        return list;
+    }
+
+    public ObservableList<Contract> getAllBriefByApartmentAndRoom(String apartmentName, String roomName) {
+        ObservableList<Contract> list = FXCollections.observableArrayList();
+        String sql = "select contract.id as id, apartment.name as apartment_name, room.name as room_name, renter.name as owner, startDate, endDate, contract.status as status from " + this.table +
+                " inner join renter on contract.proxy_id = renter.id " +
+                "inner join room on contract.room_id = room.id " +
+                "inner join apartment on room.apartment_id = apartment.id " +
+                "where apartment.name = ? and room.name = ?";
+
+        try {
+            conn = DBConnect.getConnect();
+            pstmt = conn.prepareStatement(sql);
+            pstmt.setString(1, apartmentName);
+            pstmt.setString(2, roomName);
+            rs= pstmt.executeQuery();
+
+            while (rs.next()) {
+                Contract contract = new Contract();
+
+                contract.setId(rs.getInt("id"));
+                contract.setRoom_name(rs.getString("room_name"));
+                contract.setApartment_name(rs.getString("apartment_name"));
+                contract.setOwner(rs.getString("owner"));
+                contract.setStartDate(rs.getDate("startDate"));
+                contract.setEndDate(rs.getDate("endDate"));
+                contract.setStatus(rs.getInt("status"));
+
+                list.add(contract);
+            }
+        } catch (SQLException e) {
+
+        } finally {
+            DBConnect.closeResultSet(rs);
+            DBConnect.closePreparedStatement(pstmt);
+            DBConnect.closeConnect(conn);
+        }
+        return list;
+    }
+
     @Override
     public Contract getOne(int id) {
         Contract contract = new Contract();
