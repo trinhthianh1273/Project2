@@ -71,12 +71,12 @@
         </HBox>
         <HBox alignment="CENTER_RIGHT" prefHeight="53.0" prefWidth="974.0">
             <children>
-                <ComboBox fx:id="apartmentBox" prefWidth="150.0">
+                <ComboBox fx:id="apartmentBox" prefWidth="150.0" style="-fx-background-color: white;">
                     <HBox.margin>
                         <Insets left="8.0" />
                     </HBox.margin>
                 </ComboBox>
-                <ComboBox fx:id="roomBox" prefWidth="150.0">
+                <ComboBox fx:id="roomBox" prefWidth="150.0" style="-fx-background-color: white;">
                     <HBox.margin>
                         <Insets left="8.0" />
                     </HBox.margin>
@@ -141,7 +141,7 @@
                         <TableColumn fx:id="action" prefWidth="108.0" text="Action" />
                     </columns>
                     <VBox.margin>
-                        <Insets left="12.0" right="12.0" />
+                        <Insets bottom="24.0" left="12.0" right="12.0" />
                     </VBox.margin>
                 </TableView>
             </children>

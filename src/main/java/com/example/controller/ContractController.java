@@ -120,7 +120,8 @@ public class ContractController implements Initializable {
         System.out.println(nameRoomSelected);
         if (nameApartmentSelected != null) {
             if(nameRoomSelected != null) {
-
+                ObservableList<Contract> list = new ContractModel().getAllBriefByApartmentAndRoom(nameApartmentSelected, nameRoomSelected);
+                contract_table.setItems(list);
             } else {
                 ObservableList<Contract> list = new ContractModel().getAllBriefByApartment(nameApartmentSelected);
                 contract_table.setItems(list);

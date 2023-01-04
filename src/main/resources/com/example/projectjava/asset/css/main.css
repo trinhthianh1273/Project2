@@ -92,3 +92,7 @@
     -fx-cursor: hand;
   }
 
+.combo-box {
+    -fx-border-color: black;
+}
+
