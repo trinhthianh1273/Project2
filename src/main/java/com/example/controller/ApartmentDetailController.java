@@ -1,6 +1,7 @@
 package com.example.controller;
 
 import com.example.entity.Apartment;
+import com.example.entity.UserSession;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
@@ -24,6 +25,11 @@ public class ApartmentDetailController implements Initializable {
 
     @FXML
     private Label room_quanty;
+
+    private UserSession userSession;
+    void setUserSession(UserSession userSession) {
+        this.userSession = userSession;
+    }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {

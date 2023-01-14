@@ -19,6 +19,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 
+import java.io.Console;
 import java.io.IOException;
 import java.net.URL;
 import java.nio.file.Paths;
@@ -39,6 +40,8 @@ public class MainController implements Initializable {
             throw new RuntimeException(e);
         }
     }
+
+    private UserSession userSession;
     @FXML
     private Label apartment;
 
@@ -114,13 +117,20 @@ public class MainController implements Initializable {
     }
 
     void setUserSession(UserSession userSession) {
+        this.userSession = userSession;
         userSessionName.setText(userSession.getUserName());
     }
 
     @FXML
     void show_apartment(MouseEvent event) throws IOException {
         URL url_content = Paths.get("src/main/resources/com/example/projectjava/ApartmentView.fxml").toUri().toURL();
-        Parent content = FXMLLoader.load(url_content);
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(url_content);
+        Parent content = loader.load();
+
+        ApartmentController apartmentController = loader.getController();
+        apartmentController.setUserSession(userSession);
+        //System.out.println("m: " + userSession);
 
         border_pane.setRight(content);
         apartment_link.getStyleClass().add("sidebar-btn-active");
@@ -140,7 +150,12 @@ public class MainController implements Initializable {
     void show_contract(MouseEvent event) throws IOException {
         System.out.println("contract");
         URL url_content = Paths.get("src/main/resources/com/example/projectjava/ContractView.fxml").toUri().toURL();
-        Parent content = FXMLLoader.load(url_content);
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(url_content);
+        Parent content = loader.load();
+
+        ContractController contractController = loader.getController();
+        contractController.setUserSession(userSession);
         border_pane.setRight(content);
 
         contract_link.getStyleClass().add("sidebar-btn-active");
@@ -158,7 +173,12 @@ public class MainController implements Initializable {
     @FXML
     void show_dashboard(MouseEvent event) throws IOException {
         URL url_content = Paths.get("src/main/resources/com/example/projectjava/DashboardView.fxml").toUri().toURL();
-        Parent content = FXMLLoader.load(url_content);
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(url_content);
+        Parent content = loader.load();
+
+        DashboardController dashboardController = loader.getController();
+        dashboardController.setUserSession(userSession);
         border_pane.setRight(content);
 
         border_pane.setRight(content);
@@ -178,7 +198,12 @@ public class MainController implements Initializable {
     void show_household_good(MouseEvent event) throws IOException {
         System.out.println("apartment view");
         URL url_content = Paths.get("src/main/resources/com/example/projectjava/Household_goodView.fxml").toUri().toURL();
-        Parent content = FXMLLoader.load(url_content);
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(url_content);
+        Parent content = loader.load();
+
+        Household_goodController household_goodController = loader.getController();
+        household_goodController.setUserSession(userSession);
         border_pane.setRight(content);
 
         household_good_link.getStyleClass().add("sidebar-btn-active");
@@ -197,7 +222,12 @@ public class MainController implements Initializable {
     @FXML
     void show_manager(MouseEvent event) throws IOException {
         URL url_content = Paths.get("src/main/resources/com/example/projectjava/ManagerView.fxml").toUri().toURL();
-        Parent content = FXMLLoader.load(url_content);
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(url_content);
+        Parent content = loader.load();
+
+        ManagerController managerController = loader.getController();
+        managerController.setUserSession(userSession);
         border_pane.setRight(content);
 
         manager_link.getStyleClass().add("sidebar-btn-active");
@@ -214,8 +244,14 @@ public class MainController implements Initializable {
 
     @FXML
     void show_receipt(MouseEvent event) throws IOException {
+
         URL url_content = Paths.get("src/main/resources/com/example/projectjava/ReceiptView.fxml").toUri().toURL();
-        Parent content = FXMLLoader.load(url_content);
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(url_content);
+        Parent content = loader.load();
+
+        ReceiptController receiptController = loader.getController();
+        receiptController.setUserSession(userSession);
         border_pane.setRight(content);
 
         receipt_link.getStyleClass().add("sidebar-btn-active");
@@ -233,7 +269,12 @@ public class MainController implements Initializable {
     @FXML
     void show_renter(MouseEvent event) throws IOException {
         URL url_content = Paths.get("src/main/resources/com/example/projectjava/RenterView.fxml").toUri().toURL();
-        Parent content = FXMLLoader.load(url_content);
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(url_content);
+        Parent content = loader.load();
+
+        RenterController renterController = loader.getController();
+        renterController.setUserSession(userSession);
         border_pane.setRight(content);
 
         renter_link.getStyleClass().add("sidebar-btn-active");
@@ -251,7 +292,12 @@ public class MainController implements Initializable {
     @FXML
     void show_room(MouseEvent event) throws IOException {
         URL url_content = Paths.get("src/main/resources/com/example/projectjava/RoomView.fxml").toUri().toURL();
-        Parent content = FXMLLoader.load(url_content);
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(url_content);
+        Parent content = loader.load();
+
+        RoomController roomController = loader.getController();
+        roomController.setUserSession(userSession);
         border_pane.setRight(content);
 
         room_link.getStyleClass().add("sidebar-btn-active");
@@ -269,7 +315,12 @@ public class MainController implements Initializable {
     @FXML
     void show_setting(MouseEvent event) throws IOException {
         URL url_content = Paths.get("src/main/resources/com/example/projectjava/SettingView.fxml").toUri().toURL();
-        Parent content = FXMLLoader.load(url_content);
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(url_content);
+        Parent content = loader.load();
+
+        SettingController settingController = loader.getController();
+        settingController.setUserSession(userSession);
         border_pane.setRight(content);
 
         setting_link.getStyleClass().add("sidebar-btn-active");
