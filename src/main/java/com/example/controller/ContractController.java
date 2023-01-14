@@ -2,6 +2,7 @@ package com.example.controller;
 
 import com.example.entity.Apartment;
 import com.example.entity.Contract;
+import com.example.entity.UserSession;
 import com.example.model.ApartmentModel;
 import com.example.model.ContractModel;
 import com.example.model.RoomModel;
@@ -59,6 +60,11 @@ public class ContractController implements Initializable {
 
     private String nameApartmentSelected;
     private String nameRoomSelected;
+
+    private UserSession userSession;
+    void setUserSession(UserSession userSession) {
+        this.userSession = userSession;
+    }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {

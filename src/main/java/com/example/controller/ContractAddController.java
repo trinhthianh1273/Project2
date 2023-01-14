@@ -1,5 +1,6 @@
 package com.example.controller;
 
+import com.example.entity.UserSession;
 import com.example.model.ApartmentModel;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -77,6 +78,11 @@ public class ContractAddController implements Initializable {
 
     @FXML
     private Spinner<?> wardrobeField;
+
+    private UserSession userSession;
+    void setUserSession(UserSession userSession) {
+        this.userSession = userSession;
+    }
 
     @FXML
     void add(MouseEvent event) {

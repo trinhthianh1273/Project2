@@ -1,6 +1,7 @@
 package com.example.controller;
 
 import com.example.entity.Apartment;
+import com.example.entity.UserSession;
 import com.example.model.ApartmentModel;
 import javafx.beans.Observable;
 import javafx.collections.ObservableList;
@@ -59,6 +60,10 @@ public class ApartmentController implements Initializable {
     @FXML
     private Label room_total;
 
+    private UserSession userSession;
+    void setUserSession(UserSession userSession) {
+        this.userSession = userSession;
+    }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -155,6 +160,7 @@ public class ApartmentController implements Initializable {
 
     @FXML
     void add(MouseEvent event) throws IOException {
+        System.out.println(userSession);
         URL url = Paths.get("src/main/resources/com/example/projectjava/ApartmentAddView.fxml").toUri().toURL();
         Parent parent = FXMLLoader.load(url);
 
