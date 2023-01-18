@@ -187,6 +187,12 @@ public class RenterModel implements ICommon<Renter> {
         return false;
     }
 
+    public int getTotalRenter() {
+        RenterModel list = new RenterModel();
+        int count = list.getAll().size();
+        return count;
+    }
+
     public static void main(String[] args) throws ParseException {
         RenterModel renterModel = new RenterModel();
         java.util.Date date = new SimpleDateFormat("yyyy-MM-yy").parse("12-12-2022");

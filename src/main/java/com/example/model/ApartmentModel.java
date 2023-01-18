@@ -94,6 +94,32 @@ public class ApartmentModel implements ICommon<Apartment> {
         return list;
     }
 
+    public int countFloor(String apartment_name) {
+        Apartment apartment = new Apartment();
+
+        String sql = "Select * from " + this.table + " where name = ?";
+        try {
+            conn = DBConnect.getConnect();
+            pstmt = conn.prepareStatement(sql);
+            pstmt.setString(1, apartment_name);
+            rs = pstmt.executeQuery();
+
+            while (rs.next()) {
+                apartment.setId(rs.getInt("id"));
+                apartment.setName(rs.getString("name"));
+                apartment.setFloor_quanty(rs.getInt("floor_quanty"));
+                apartment.setRoom_quanty(rs.getInt("room_quanty"));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            DBConnect.closeResultSet(rs);
+            DBConnect.closePreparedStatement(pstmt);
+            DBConnect.closeConnect(conn);
+        }
+        return apartment.getFloor_quanty();
+    }
+
     @Override
     public boolean add(Apartment obj) {
         String sql = "insert into " + this.table + "(name, floor_quanty, room_quanty)" +
@@ -320,11 +346,41 @@ public class ApartmentModel implements ICommon<Apartment> {
         return true;
     }
 
+    public int getTotalApartment() {
+        ApartmentModel list = new ApartmentModel();
+        int count = list.getAll().size();
+
+        return count;
+    }
+
+    public int getIdByName(String name) {
+        int apartment_id = 0;
+        String sql = "Select id from " + this.table + " where name = ?";
+        try {
+            conn = DBConnect.getConnect();
+            pstmt = conn.prepareStatement(sql);
+            pstmt.setString(1, name);
+            rs = pstmt.executeQuery();
+
+            while (rs.next()) {
+                apartment_id = rs.getInt("id");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            DBConnect.closeResultSet(rs);
+            DBConnect.closePreparedStatement(pstmt);
+            DBConnect.closeConnect(conn);
+        }
+        return apartment_id;
+    }
+
     public static void main(String[] args) {
         ApartmentModel apartmentModel = new ApartmentModel();
 
         Apartment n = new Apartment("Tranh", 12, 48);
-        System.out.println(apartmentModel.getApartmentName());
+        System.out.println(apartmentModel.countFloor("HUD3"));
+        ObservableList<Integer> list = FXCollections.observableArrayList();;
     }
 
 }
