@@ -2,6 +2,7 @@ package com.example.controller;
 
 import com.example.entity.Apartment;
 import com.example.entity.Contract;
+import com.example.entity.UserSession;
 import com.example.model.ApartmentModel;
 import com.example.model.ContractModel;
 import com.example.model.RoomModel;
@@ -9,12 +10,19 @@ import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
+import java.io.IOException;
 import java.net.URL;
+import java.nio.file.Paths;
 import java.util.ResourceBundle;
 
 public class ContractController implements Initializable {
@@ -60,6 +68,11 @@ public class ContractController implements Initializable {
     private String nameApartmentSelected;
     private String nameRoomSelected;
 
+    private UserSession userSession;
+    void setUserSession(UserSession userSession) {
+        this.userSession = userSession;
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         //contract_table.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
@@ -104,8 +117,15 @@ public class ContractController implements Initializable {
 
 
     @FXML
-    void add(MouseEvent event) {
+    void add(MouseEvent event) throws IOException {
+        System.out.println(userSession);
+        URL url = Paths.get("src/main/resources/com/example/projectjava/ContractAddView.fxml").toUri().toURL();
+        Parent parent = FXMLLoader.load(url);
 
+        Stage stage = new Stage();
+        stage.setScene(new Scene(parent));
+        stage.initStyle(StageStyle.UTILITY);
+        stage.show();
     }
 
     @FXML

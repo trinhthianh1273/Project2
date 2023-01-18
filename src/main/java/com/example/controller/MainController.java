@@ -119,10 +119,11 @@ public class MainController implements Initializable {
 
     @FXML
     void show_apartment(MouseEvent event) throws IOException {
+        System.out.printf("Apartment clicked");
         URL url_content = Paths.get("src/main/resources/com/example/projectjava/ApartmentView.fxml").toUri().toURL();
         Parent content = FXMLLoader.load(url_content);
-
         border_pane.setRight(content);
+
         apartment_link.getStyleClass().add("sidebar-btn-active");
 
         dashboard_link.getStyleClass().remove("sidebar-btn-active");
@@ -222,7 +223,7 @@ public class MainController implements Initializable {
 
         dashboard_link.getStyleClass().remove("sidebar-btn-active");
         room_link.getStyleClass().remove("sidebar-btn-active");
-        apartment_link.getStyleClass().remove("sidebar-btn-active");
+        apartment.getStyleClass().remove("sidebar-btn-active");
         renter_link.getStyleClass().remove("sidebar-btn-active");
         contract_link.getStyleClass().remove("sidebar-btn-active");
         household_good_link.getStyleClass().remove("sidebar-btn-active");
