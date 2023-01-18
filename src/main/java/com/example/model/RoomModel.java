@@ -28,17 +28,104 @@ public class RoomModel implements ICommon<Room> {
             while (rs.next()) {
                 Room room = new Room();
                 room.setId(rs.getInt("id"));
+                sql = "select blank from contract where id = ?" +
+                        " order by createDate desc" +
+                        " limit 1";
+
+                pstmt = conn.prepareStatement(sql);
+                pstmt.setInt(1, room.getId());
+                ResultSet rs_extra = pstmt.executeQuery();
+                while (rs_extra.next()) {
+                    room.setBlank(rs_extra.getInt("blank"));
+                }
+
+                sql = "select apartment.name from apartment " +
+                        " inner join room on apartment.id = room.apartment_id" +
+                        " where room.id = ?";
+
+                pstmt = conn.prepareStatement(sql);
+                pstmt.setInt(1, room.getId());
+                rs_extra = pstmt.executeQuery();
+                while (rs_extra.next()) {
+                    room.setApartment_name(rs_extra.getString("name"));
+                }
+
                 room.setName(rs.getString("name"));
                 room.setFloor(rs.getInt("floor"));
                 room.setMember_max(rs.getInt("member_max"));
                 room.setRental(rs.getInt("rental"));
                 room.setStatus(rs.getInt("status"));
+                if(room.getStatus() == 0) {
+                    room.setActual_people(0);
+                } else {
+                    room.setActual_people(room.getMember_max() - room.getBlank());
+                }
 
                 list.add(room);
             }
         } catch (SQLException e) {
 
         } finally {
+            DBConnect.closeResultSet(rs);
+            DBConnect.closePreparedStatement(pstmt);
+            DBConnect.closeConnect(conn);
+        }
+        return list;
+    }
+
+    public ObservableList<Room> getAllByApartmentName(String Apartment_name) {
+        ObservableList<Room> list = FXCollections.observableArrayList();
+
+        String sql = "select id from apartment " +
+                "where name = ?";
+        try {
+            conn = DBConnect.getConnect();
+            pstmt = conn.prepareStatement(sql);
+            pstmt.setString(1, Apartment_name);
+            rs= pstmt.executeQuery();
+
+            while (rs.next()) {
+                int apartment_id = rs.getInt("id");
+
+                sql = "Select * from " + this.table +
+                    " where apartment_id = ?";
+
+                    pstmt = conn.prepareStatement(sql);
+                    pstmt.setInt(1, apartment_id);
+                    rs= pstmt.executeQuery();
+
+                    while (rs.next()) {
+                        Room room = new Room();
+                        room.setApartment_name(Apartment_name);
+                        room.setName(rs.getString("name"));
+                        room.setFloor(rs.getInt("floor"));
+                        room.setMember_max(rs.getInt("member_max"));
+                        room.setRental(rs.getInt("rental"));
+                        room.setStatus(rs.getInt("status"));
+                        if(room.getStatus() == 0) {
+                            room.setActual_people(0);
+                        } else {
+                            room.setActual_people(room.getMember_max() - room.getBlank());
+                        }
+
+                        sql = "select blank from contract where id = ?" +
+                                " order by createDate desc" +
+                                " limit 1";
+                        pstmt = conn.prepareStatement(sql);
+                        pstmt.setInt(1, room.getId());
+                        ResultSet rs_extra = pstmt.executeQuery();
+
+                        while (rs_extra.next()) {
+                            room.setBlank(rs_extra.getInt("blank"));
+                        }
+
+                        list.add(room);
+                    }
+
+            }
+        } catch (SQLException e) {
+
+        }  finally {
             DBConnect.closeResultSet(rs);
             DBConnect.closePreparedStatement(pstmt);
             DBConnect.closeConnect(conn);
@@ -132,6 +219,119 @@ public class RoomModel implements ICommon<Room> {
         return list;
     }
 
+    public ObservableList<Room> getEmptyRoom() {
+        ObservableList<Room> list = FXCollections.observableArrayList();
+        String sql = "Select * from " + this.table + " where status = 0";
+
+        try {
+            conn = DBConnect.getConnect();
+            pstmt = conn.prepareStatement(sql);
+            rs= pstmt.executeQuery();
+
+            while (rs.next()) {
+                Room room = new Room();
+                room.setId(rs.getInt("id"));
+                sql = "select blank from contract where id = ?" +
+                        " order by createDate desc" +
+                        " limit 1";
+
+                pstmt = conn.prepareStatement(sql);
+                pstmt.setInt(1, room.getId());
+                ResultSet rs_extra = pstmt.executeQuery();
+                while (rs_extra.next()) {
+                    room.setBlank(rs_extra.getInt("blank"));
+                }
+
+                sql = "select apartment.name from apartment " +
+                        " inner join room on apartment.id = room.apartment_id" +
+                        " where room.id = ?";
+
+                pstmt = conn.prepareStatement(sql);
+                pstmt.setInt(1, room.getId());
+                rs_extra = pstmt.executeQuery();
+                while (rs_extra.next()) {
+                    room.setApartment_name(rs_extra.getString("name"));
+                }
+
+                room.setName(rs.getString("name"));
+                room.setFloor(rs.getInt("floor"));
+                room.setMember_max(rs.getInt("member_max"));
+                room.setRental(rs.getInt("rental"));
+                room.setStatus(rs.getInt("status"));
+                if(room.getStatus() == 0) {
+                    room.setActual_people(0);
+                } else {
+                    room.setActual_people(room.getMember_max() - room.getBlank());
+                }
+
+                list.add(room);
+            }
+        } catch (SQLException e) {
+
+        } finally {
+            DBConnect.closeResultSet(rs);
+            DBConnect.closePreparedStatement(pstmt);
+            DBConnect.closeConnect(conn);
+        }
+        return list;
+    }
+
+    public ObservableList<Room> getRentedRoom() {
+        ObservableList<Room> list = FXCollections.observableArrayList();
+        String sql = "Select * from " + this.table + " where status = 1";
+
+        try {
+            conn = DBConnect.getConnect();
+            pstmt = conn.prepareStatement(sql);
+            rs= pstmt.executeQuery();
+
+            while (rs.next()) {
+                Room room = new Room();
+                room.setId(rs.getInt("id"));
+                sql = "select blank from contract where id = ?" +
+                        " order by createDate desc" +
+                        " limit 1";
+
+                pstmt = conn.prepareStatement(sql);
+                pstmt.setInt(1, room.getId());
+                ResultSet rs_extra = pstmt.executeQuery();
+                while (rs_extra.next()) {
+                    room.setBlank(rs_extra.getInt("blank"));
+                }
+
+                sql = "select apartment.name from apartment " +
+                        " inner join room on apartment.id = room.apartment_id" +
+                        " where room.id = ?";
+
+                pstmt = conn.prepareStatement(sql);
+                pstmt.setInt(1, room.getId());
+                rs_extra = pstmt.executeQuery();
+                while (rs_extra.next()) {
+                    room.setApartment_name(rs_extra.getString("name"));
+                }
+
+                room.setName(rs.getString("name"));
+                room.setFloor(rs.getInt("floor"));
+                room.setMember_max(rs.getInt("member_max"));
+                room.setRental(rs.getInt("rental"));
+                room.setStatus(rs.getInt("status"));
+                if(room.getStatus() == 0) {
+                    room.setActual_people(0);
+                } else {
+                    room.setActual_people(room.getMember_max() - room.getBlank());
+                }
+
+                list.add(room);
+            }
+        } catch (SQLException e) {
+
+        } finally {
+            DBConnect.closeResultSet(rs);
+            DBConnect.closePreparedStatement(pstmt);
+            DBConnect.closeConnect(conn);
+        }
+        return list;
+    }
     @Override
     public boolean add(Room obj) {
         String sql = "insert into " + this.table + "(apartment_id, name, floor, member_max, rental, status)" +
@@ -219,9 +419,14 @@ public class RoomModel implements ICommon<Room> {
         return false;
     }
 
+    public int getTotalRoom() {
+        RoomModel list = new RoomModel();
+        int count = list.getAll().size();
+        return count;
+    }
+
     public static void main(String[] args) {
         RoomModel roomModel = new RoomModel();
-        Room room = new Room(41, 1, "1001", 10, 4, 9000000, 1);
-        System.out.println(roomModel.getAllByFloor(2));
+        System.out.println(roomModel.getAllByApartmentName("HUD3"));
     }
 }

@@ -10,12 +10,19 @@ import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
+import java.io.IOException;
 import java.net.URL;
+import java.nio.file.Paths;
 import java.util.ResourceBundle;
 
 public class ContractController implements Initializable {
@@ -110,8 +117,15 @@ public class ContractController implements Initializable {
 
 
     @FXML
-    void add(MouseEvent event) {
+    void add(MouseEvent event) throws IOException {
+        System.out.println(userSession);
+        URL url = Paths.get("src/main/resources/com/example/projectjava/ContractAddView.fxml").toUri().toURL();
+        Parent parent = FXMLLoader.load(url);
 
+        Stage stage = new Stage();
+        stage.setScene(new Scene(parent));
+        stage.initStyle(StageStyle.UTILITY);
+        stage.show();
     }
 
     @FXML
