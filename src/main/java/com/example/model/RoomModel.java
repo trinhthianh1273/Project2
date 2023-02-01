@@ -18,7 +18,9 @@ public class RoomModel implements ICommon<Room> {
     @Override
     public ObservableList<Room> getAll() {
         ObservableList<Room> list = FXCollections.observableArrayList();
-        String sql = "Select * from " + this.table;
+        String sql = "Select room.id, room.name, room.apartment_id, room.floor, room.member_max, room.rental, room.status," +
+                "apartment.name as apartment_name from " + this.table +
+                " inner join apartment on room.apartment_id = apartment.id ";
 
         try {
             conn = DBConnect.getConnect();
@@ -28,7 +30,16 @@ public class RoomModel implements ICommon<Room> {
             while (rs.next()) {
                 Room room = new Room();
                 room.setId(rs.getInt("id"));
-                sql = "select blank from contract where id = ?" +
+                //System.out.println(room.getId());
+                room.setApartment_id(rs.getInt("apartment_id"));
+                room.setApartment_name(rs.getString("apartment_name"));
+                room.setName(rs.getString("name"));
+                room.setFloor(rs.getInt("floor"));
+                room.setMember_max(rs.getInt("member_max"));
+                room.setRental(rs.getInt("rental"));
+                room.setStatus(rs.getInt("status"));
+
+                sql = "select blank from contract where room_id = ?" +
                         " order by createDate desc" +
                         " limit 1";
 
@@ -39,22 +50,6 @@ public class RoomModel implements ICommon<Room> {
                     room.setBlank(rs_extra.getInt("blank"));
                 }
 
-                sql = "select apartment.name from apartment " +
-                        " inner join room on apartment.id = room.apartment_id" +
-                        " where room.id = ?";
-
-                pstmt = conn.prepareStatement(sql);
-                pstmt.setInt(1, room.getId());
-                rs_extra = pstmt.executeQuery();
-                while (rs_extra.next()) {
-                    room.setApartment_name(rs_extra.getString("name"));
-                }
-
-                room.setName(rs.getString("name"));
-                room.setFloor(rs.getInt("floor"));
-                room.setMember_max(rs.getInt("member_max"));
-                room.setRental(rs.getInt("rental"));
-                room.setStatus(rs.getInt("status"));
                 if(room.getStatus() == 0) {
                     room.setActual_people(0);
                 } else {
@@ -76,60 +71,12 @@ public class RoomModel implements ICommon<Room> {
     public ObservableList<Room> getAllByApartmentName(String Apartment_name) {
         ObservableList<Room> list = FXCollections.observableArrayList();
 
-        String sql = "select id from apartment " +
-                "where name = ?";
-        try {
-            conn = DBConnect.getConnect();
-            pstmt = conn.prepareStatement(sql);
-            pstmt.setString(1, Apartment_name);
-            rs= pstmt.executeQuery();
-
-            while (rs.next()) {
-                int apartment_id = rs.getInt("id");
-
-                sql = "Select * from " + this.table +
-                    " where apartment_id = ?";
-
-                    pstmt = conn.prepareStatement(sql);
-                    pstmt.setInt(1, apartment_id);
-                    rs= pstmt.executeQuery();
-
-                    while (rs.next()) {
-                        Room room = new Room();
-                        room.setApartment_name(Apartment_name);
-                        room.setName(rs.getString("name"));
-                        room.setFloor(rs.getInt("floor"));
-                        room.setMember_max(rs.getInt("member_max"));
-                        room.setRental(rs.getInt("rental"));
-                        room.setStatus(rs.getInt("status"));
-                        if(room.getStatus() == 0) {
-                            room.setActual_people(0);
-                        } else {
-                            room.setActual_people(room.getMember_max() - room.getBlank());
-                        }
-
-                        sql = "select blank from contract where id = ?" +
-                                " order by createDate desc" +
-                                " limit 1";
-                        pstmt = conn.prepareStatement(sql);
-                        pstmt.setInt(1, room.getId());
-                        ResultSet rs_extra = pstmt.executeQuery();
-
-                        while (rs_extra.next()) {
-                            room.setBlank(rs_extra.getInt("blank"));
-                        }
-
-                        list.add(room);
-                    }
-
+        ObservableList<Room> ListAll = getAll();
+        ListAll.forEach(e -> {
+            if(e.getApartment_name().equals(Apartment_name) == true) {
+                list.add(e);
             }
-        } catch (SQLException e) {
-
-        }  finally {
-            DBConnect.closeResultSet(rs);
-            DBConnect.closePreparedStatement(pstmt);
-            DBConnect.closeConnect(conn);
-        }
+        });
         return list;
     }
 
@@ -231,7 +178,7 @@ public class RoomModel implements ICommon<Room> {
             while (rs.next()) {
                 Room room = new Room();
                 room.setId(rs.getInt("id"));
-                sql = "select blank from contract where id = ?" +
+                sql = "select blank from contract where room_id = ?" +
                         " order by createDate desc" +
                         " limit 1";
 
@@ -427,6 +374,6 @@ public class RoomModel implements ICommon<Room> {
 
     public static void main(String[] args) {
         RoomModel roomModel = new RoomModel();
-        System.out.println(roomModel.getAllByApartmentName("HUD3"));
+        System.out.println(roomModel.getAllByApartmentName("HUD5"));
     }
 }

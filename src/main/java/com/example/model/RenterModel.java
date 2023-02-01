@@ -2,7 +2,6 @@ package com.example.model;
 
 import com.example.common.ICommon;
 import com.example.connect.DBConnect;
-import com.example.entity.Apartment;
 import com.example.entity.Renter;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -10,6 +9,7 @@ import javafx.collections.ObservableList;
 import java.sql.*;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class RenterModel implements ICommon<Renter> {
     private Connection conn=null;
@@ -35,10 +35,16 @@ public class RenterModel implements ICommon<Renter> {
                 renter.setEmail(rs.getString("email"));
                 renter.setStatus(rs.getInt("status"));
                 renter.setDob(rs.getDate("dob"));
-                renter.setProvince(rs.getString("province"));
-                renter.setDistrict(rs.getString("district"));
-                renter.setCommune(rs.getString("commune"));
-                renter.setAddress(rs.getString("address"));
+
+                String address = rs.getString("address");
+                String commune = rs.getString("commune");
+                String district = rs.getString("district");
+                String province = rs.getString("province");
+
+//                renter.setProvince(rs.getString("province"));
+//                renter.setDistrict(rs.getString("district"));
+//                renter.setCommune(rs.getString("commune"));
+                renter.setAddress(address + ", " + commune + ", " + district + ", " + province);
                 renter.setGender(rs.getInt("gender"));
 
                 list.add(renter);
@@ -71,7 +77,6 @@ public class RenterModel implements ICommon<Renter> {
                 renter.setEmail(rs.getString("email"));
                 renter.setStatus(rs.getInt("status"));
                 renter.setProvince(rs.getString("province"));
-                System.out.println(rs.getString("province"));
                 renter.setDistrict(rs.getString("district"));
                 renter.setCommune(rs.getString("commune"));
                 renter.setAddress(rs.getString("address"));
@@ -190,6 +195,18 @@ public class RenterModel implements ICommon<Renter> {
     public int getTotalRenter() {
         RenterModel list = new RenterModel();
         int count = list.getAll().size();
+        return count;
+    }
+
+    public int getTotalRenterIng() {
+        ObservableList<Renter> list = new RenterModel().getAll();
+        int count = (int) list.stream().filter(e -> e.getStatus()==1).count();
+        return count;
+    }
+
+    public int getTotalRenterEd() {
+        ObservableList<Renter> list = new RenterModel().getAll();
+        int count = (int) list.stream().filter(e -> e.getStatus()==0).count();
         return count;
     }
 

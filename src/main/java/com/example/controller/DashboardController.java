@@ -43,8 +43,5 @@ public class DashboardController implements Initializable {
         RenterModel RenterModel = new RenterModel();
         int countRenter = RenterModel.getTotalRenter();
         TotalTenant.setText(String.valueOf(countRenter));
-
-        System.out.println(countApartment);
-
     }
 }

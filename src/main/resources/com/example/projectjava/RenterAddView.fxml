@@ -5,99 +5,115 @@
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<VBox prefHeight="387.0" prefWidth="568.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.controller.RenterAddController">
+<VBox prefHeight="400.0" prefWidth="601.0" style="-fx-background-color: #d8d4ea;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.controller.RenterAddController">
    <children>
-      <HBox alignment="BOTTOM_LEFT" prefHeight="59.0" prefWidth="568.0">
+      <HBox alignment="BOTTOM_LEFT" prefHeight="32.0" prefWidth="602.0">
          <children>
-            <Label prefHeight="59.0" prefWidth="150.0" text="New Renter Info" />
+            <Label prefHeight="24.0" prefWidth="127.0" text="New Renter Info">
+               <HBox.margin>
+                  <Insets left="24.0" />
+               </HBox.margin>
+               <font>
+                  <Font name="Tw Cen MT" size="18.0" />
+               </font></Label>
+            <Separator prefHeight="4.0" prefWidth="426.0">
+               <HBox.margin>
+                  <Insets bottom="4.0" />
+               </HBox.margin>
+            </Separator>
          </children>
+         <VBox.margin>
+            <Insets bottom="12.0" top="12.0" />
+         </VBox.margin>
       </HBox>
       <HBox prefHeight="333.0" prefWidth="568.0">
          <children>
-            <VBox prefHeight="331.0" prefWidth="283.0">
+            <VBox prefHeight="334.0" prefWidth="298.0">
                <children>
-                  <HBox alignment="CENTER_LEFT" prefHeight="47.0" prefWidth="264.0">
+                  <HBox alignment="CENTER_LEFT" prefHeight="48.0" prefWidth="264.0">
                      <children>
                         <Label prefWidth="80.0" text="Name">
                            <HBox.margin>
                               <Insets left="12.0" />
                            </HBox.margin>
                         </Label>
-                        <TextField id="NewRenterName" fx:id="NewRenterName" alignment="CENTER" prefWidth="160.0">
+                        <TextField id="NewRenterName" fx:id="name" prefWidth="160.0">
                            <HBox.margin>
                               <Insets right="12.0" />
                            </HBox.margin>
                         </TextField>
                      </children>
                   </HBox>
-                  <HBox alignment="CENTER_LEFT" prefHeight="62.0" prefWidth="264.0">
+                  <HBox alignment="CENTER_LEFT" prefHeight="48.0" prefWidth="264.0">
                      <children>
                         <Label prefWidth="80.0" text="DOB">
                            <HBox.margin>
                               <Insets left="12.0" />
                            </HBox.margin>
                         </Label>
-                        <DatePicker id="NewRenterDob" fx:id="NewRenterDOB" prefWidth="160.0">
+                        <DatePicker id="NewRenterDob" fx:id="dob" prefWidth="160.0">
                            <HBox.margin>
                               <Insets right="12.0" />
                            </HBox.margin>
                         </DatePicker>
                      </children>
                   </HBox>
-                  <HBox fx:id="NewRenterPhone" alignment="CENTER_LEFT" prefHeight="76.0" prefWidth="264.0">
+                  <HBox fx:id="NewRenterPhone" alignment="CENTER_LEFT" prefHeight="48.0" prefWidth="264.0">
                      <children>
                         <Label prefWidth="80.0" text="Phone">
                            <HBox.margin>
                               <Insets left="12.0" />
                            </HBox.margin>
                         </Label>
-                        <TextField id="NewRenterPhone" prefWidth="160.0">
+                        <TextField id="NewRenterPhone" fx:id="phone" prefWidth="160.0">
                            <HBox.margin>
                               <Insets right="12.0" />
                            </HBox.margin>
                         </TextField>
                      </children>
                   </HBox>
-                  <HBox fx:id="NewRenterEmail" alignment="CENTER_LEFT" prefHeight="52.0" prefWidth="264.0">
+                  <HBox fx:id="NewRenterEmail" alignment="CENTER_LEFT" prefHeight="48.0" prefWidth="264.0">
                      <children>
                         <Label prefWidth="80.0" text="Email">
                            <HBox.margin>
                               <Insets left="12.0" />
                            </HBox.margin>
                         </Label>
-                        <TextField id="NewRenterEmail" prefWidth="160.0">
+                        <TextField id="NewRenterEmail" fx:id="email" prefWidth="160.0">
                            <HBox.margin>
                               <Insets right="12.0" />
                            </HBox.margin>
                         </TextField>
                      </children>
                   </HBox>
-                  <HBox alignment="CENTER_LEFT" prefHeight="46.0" prefWidth="264.0">
+                  <HBox alignment="CENTER_LEFT" prefHeight="48.0" prefWidth="264.0">
                      <children>
                         <Label prefWidth="80.0" text="Gender">
                            <HBox.margin>
                               <Insets left="12.0" />
                            </HBox.margin>
                         </Label>
-                        <ComboBox fx:id="NewRenterGender" prefWidth="150.0" />
+                        <ComboBox fx:id="gender" prefWidth="150.0" />
                      </children>
                   </HBox>
                </children>
             </VBox>
             <VBox prefHeight="331.0" prefWidth="323.0">
                <children>
-                  <HBox alignment="CENTER_LEFT" prefHeight="68.0" prefWidth="305.0">
+                  <HBox alignment="CENTER_LEFT" prefHeight="48.0" prefWidth="264.0">
                      <children>
                         <Label prefWidth="80.0" text="Province">
                            <HBox.margin>
                               <Insets left="12.0" />
                            </HBox.margin>
                         </Label>
-                        <ComboBox fx:id="NewRenterProvince" prefWidth="160.0">
+                        <ComboBox fx:id="province" prefWidth="160.0">
                            <HBox.margin>
                               <Insets right="12.0" />
                            </HBox.margin>
@@ -106,12 +122,12 @@
                   </HBox>
                   <HBox alignment="CENTER_LEFT" prefHeight="57.0" prefWidth="305.0">
                      <children>
-                        <Label prefWidth="80.0" text="Distric">
+                        <Label prefWidth="80.0" text="District">
                            <HBox.margin>
                               <Insets left="12.0" />
                            </HBox.margin>
                         </Label>
-                        <ComboBox fx:id="NewRenterDistric" prefWidth="160.0">
+                        <ComboBox fx:id="district" prefWidth="160.0">
                            <HBox.margin>
                               <Insets right="12.0" />
                            </HBox.margin>
@@ -125,7 +141,7 @@
                               <Insets left="12.0" />
                            </HBox.margin>
                         </Label>
-                        <ComboBox fx:id="NewRenterCommune" prefHeight="28.0" prefWidth="160.0">
+                        <ComboBox fx:id="commune" prefHeight="28.0" prefWidth="160.0">
                            <HBox.margin>
                               <Insets right="12.0" />
                            </HBox.margin>
@@ -139,21 +155,29 @@
                               <Insets left="12.0" />
                            </HBox.margin>
                         </Label>
-                        <TextField fx:id="NewRenterAddress" prefWidth="160.0">
+                        <TextField fx:id="address" prefWidth="160.0">
                            <HBox.margin>
                               <Insets right="12.0" />
                            </HBox.margin>
                         </TextField>
                      </children>
                   </HBox>
-                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
-                     <children>
-                        <Button fx:id="NewRenterADD" alignment="CENTER" mnemonicParsing="false" text="Add" />
-                        <Button fx:id="NewRenterReset" mnemonicParsing="false" text="Reset" />
-                     </children>
-                  </HBox>
                </children>
             </VBox>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="167.0" prefWidth="602.0">
+         <children>
+            <Button fx:id="addBtn" alignment="CENTER" mnemonicParsing="false" onMouseClicked="#add" prefHeight="32.0" prefWidth="62.0" text="Add">
+               <HBox.margin>
+                  <Insets right="24.0" />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="resetBtn" mnemonicParsing="false" onMouseClicked="#reset" prefHeight="32.0" prefWidth="62.0" text="Reset">
+               <HBox.margin>
+                  <Insets left="24.0" />
+               </HBox.margin>
+            </Button>
          </children>
       </HBox>
    </children>
