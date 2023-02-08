@@ -210,10 +210,50 @@ public class RenterModel implements ICommon<Renter> {
         return count;
     }
 
+    public boolean checkEmail(String email) {
+        String sql = "Select * from " + this.table + " where email = ?";
+        try {
+            conn = DBConnect.getConnect();
+            pstmt = conn.prepareStatement(sql);
+
+            pstmt.setString(1, email);
+            rs = pstmt.executeQuery();
+            while (rs.next()) {
+                return true;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            DBConnect.closePreparedStatement(pstmt);
+            DBConnect.closeConnect(conn);
+        }
+        return false;
+    }
+
+    public boolean checkPhone(String phone) {
+        String sql = "Select * from " + this.table + " where phone = ?";
+        try {
+            conn = DBConnect.getConnect();
+            pstmt = conn.prepareStatement(sql);
+
+            pstmt.setString(1, phone);
+            rs = pstmt.executeQuery();
+            while (rs.next()) {
+                return true;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            DBConnect.closePreparedStatement(pstmt);
+            DBConnect.closeConnect(conn);
+        }
+        return false;
+    }
+
     public static void main(String[] args) throws ParseException {
         RenterModel renterModel = new RenterModel();
-        java.util.Date date = new SimpleDateFormat("yyyy-MM-yy").parse("12-12-2022");
-        Renter r = new Renter("Nguyen Hoang Nam", "0123456789", "nguyenhoangnam@gmail.com", 1, date, "Thai Nguyen", "TP Thai Nguyen", "", "", 1);
-        System.out.println(renterModel.delete(32));
+
+        boolean check = renterModel.checkEmail("0222222222");
+        System.out.println(check);
     }
 }

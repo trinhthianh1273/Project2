@@ -11,6 +11,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
@@ -259,18 +260,15 @@ public class RenterController implements Initializable {
                             try {
                                 TableRow row = this.getTableRow();
                                 System.out.println("Edit clicked");
-                                Room a = (Room) row.getItem();
-                                System.out.println(a);
+                                Renter a = (Renter) row.getItem();
 
-//                                ObservableList<Apartment> apartment = apartment_table.getItems();
-//                                System.out.println(apartment.get(0));
-                                URL url = Paths.get("src/main/resources/com/example/projectjava/RoomDetail.fxml").toUri().toURL();
+                                URL url = Paths.get("src/main/resources/com/example/projectjava/RenterEditView.fxml").toUri().toURL();
                                 FXMLLoader loader = new FXMLLoader();
                                 loader.setLocation(url);
                                 Parent parent = loader.load();
 
-                                RoomDetailController roomDetailController = loader.getController();
-                                roomDetailController.setRoom(a);
+                                RenterEditController renterEditController = loader.getController();
+                                renterEditController.setRenter(a);
 
                                 Stage stage = new Stage();
                                 stage.setScene(new Scene(parent));
@@ -286,7 +284,21 @@ public class RenterController implements Initializable {
                     {
                         RemoveBtn.setOnAction((ActionEvent event) -> {
                             Renter data = getTableView().getItems().get(getIndex());
-                            System.out.println("Remove button selected");
+
+                            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                            alert.setTitle("Remove Renter Status");
+
+                            if(data.getStatus() == 1) {
+                                alert.setHeaderText("This renter is in contract");
+                                alert.showAndWait().ifPresent(buttonType -> {
+                                    if (buttonType == ButtonType.OK || buttonType == ButtonType.CANCEL) {
+                                        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                                        //stage.close();
+                                    }
+                                });
+                            } else {
+                                boolean removeRenter = new RenterModel().delete(data.getId());
+                            }
                         });
                     }
 
