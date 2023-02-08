@@ -30,7 +30,10 @@
             <children>
                 <VBox alignment="CENTER" prefHeight="94.0" prefWidth="135.0">
                     <children>
-                        <Text fx:id="TotalContract" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+                        <Text fx:id="TotalContract" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Text>
                         <Label text="TotalContract">
                             <graphic>
                                 <FontAwesomeIconView icon="ICON_STAR" />
@@ -43,7 +46,10 @@
                 </VBox>
                 <VBox alignment="CENTER" prefHeight="88.0" prefWidth="144.0">
                     <children>
-                        <Text fx:id="Renting" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+                        <Text fx:id="Renting" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Text>
                         <Label text="Renting">
                             <graphic>
                                 <FontAwesomeIconView icon="ICON_USER" />
@@ -56,7 +62,10 @@
                 </VBox>
                 <VBox alignment="CENTER" prefHeight="88.0" prefWidth="142.0">
                     <children>
-                        <Text fx:id="Expirred" strokeType="OUTSIDE" strokeWidth="0.0" text="Expirred" />
+                        <Text fx:id="Expirred" strokeType="OUTSIDE" strokeWidth="0.0" text="Expirred">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Text>
                         <Label text="Expirred">
                             <graphic>
                                 <FontAwesomeIconView icon="ICON_TRASH" />

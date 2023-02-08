@@ -142,6 +142,8 @@ public class RoomController implements Initializable {
 
         // lấy list room
         ObservableList<Room> list = roomModel.getAll();
+        System.out.println(list);
+
         AtomicInteger countRentedRoom = new AtomicInteger();
         AtomicInteger countEmptyRoom = new AtomicInteger();
         list.forEach(i -> {
@@ -204,6 +206,7 @@ public class RoomController implements Initializable {
                                 TableRow row = this.getTableRow();
                                 System.out.println("Edit clicked");
                                 Room a = (Room) row.getItem();
+                                System.out.println(a);
 
 //                                ObservableList<Apartment> apartment = apartment_table.getItems();
 //                                System.out.println(apartment.get(0));
