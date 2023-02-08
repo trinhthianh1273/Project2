@@ -31,7 +31,10 @@
          <children>
             <VBox alignment="CENTER" prefHeight="148.0" prefWidth="185.0">
                <children>
-                  <Text fx:id="rentedroom" strokeType="OUTSIDE" strokeWidth="0.0" text="rentedroom" />
+                  <Text fx:id="rentedroom" strokeType="OUTSIDE" strokeWidth="0.0" text="rentedroom">
+                     <font>
+                        <Font size="22.0" />
+                     </font></Text>
                   <Label text="Rented Room">
                      <graphic>
                         <FontAwesomeIconView icon="ICON_BUILDING" />
@@ -44,7 +47,10 @@
             </VBox>
             <VBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="148.0" prefWidth="185.0">
                <children>
-                  <Text fx:id="emptyroom" strokeType="OUTSIDE" strokeWidth="0.0" text="emptyroom" />
+                  <Text fx:id="emptyroom" strokeType="OUTSIDE" strokeWidth="0.0" text="emptyroom">
+                     <font>
+                        <Font size="22.0" />
+                     </font></Text>
                   <Label text="Empty Room">
                      <graphic>
                         <FontAwesomeIconView icon="ICON_BUILDING" />
@@ -123,7 +129,7 @@
                   <TableColumn fx:id="memberMax" prefWidth="148.0" text="Member Max" />
                   <TableColumn fx:id="actualPeople" prefWidth="131.19989013671875" text="Actual People" />
                   <TableColumn fx:id="status" prefWidth="76.7999267578125" text="Status" />
-                  <TableColumn fx:id="action" prefWidth="108.0" text="Action" />
+                  <TableColumn fx:id="action" prefWidth="108.0" text="action" />
                </columns>
                <VBox.margin>
                   <Insets bottom="24.0" left="12.0" right="12.0" />

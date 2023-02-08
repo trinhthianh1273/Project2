@@ -2,7 +2,6 @@ package com.example.model;
 
 import com.example.common.ICommon;
 import com.example.connect.DBConnect;
-import com.example.entity.Apartment;
 import com.example.entity.Renter;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -10,6 +9,7 @@ import javafx.collections.ObservableList;
 import java.sql.*;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class RenterModel implements ICommon<Renter> {
     private Connection conn=null;
@@ -35,10 +35,16 @@ public class RenterModel implements ICommon<Renter> {
                 renter.setEmail(rs.getString("email"));
                 renter.setStatus(rs.getInt("status"));
                 renter.setDob(rs.getDate("dob"));
-                renter.setProvince(rs.getString("province"));
-                renter.setDistrict(rs.getString("district"));
-                renter.setCommune(rs.getString("commune"));
-                renter.setAddress(rs.getString("address"));
+
+                String address = rs.getString("address");
+                String commune = rs.getString("commune");
+                String district = rs.getString("district");
+                String province = rs.getString("province");
+
+//                renter.setProvince(rs.getString("province"));
+//                renter.setDistrict(rs.getString("district"));
+//                renter.setCommune(rs.getString("commune"));
+                renter.setAddress(address + ", " + commune + ", " + district + ", " + province);
                 renter.setGender(rs.getInt("gender"));
 
                 list.add(renter);
@@ -71,7 +77,6 @@ public class RenterModel implements ICommon<Renter> {
                 renter.setEmail(rs.getString("email"));
                 renter.setStatus(rs.getInt("status"));
                 renter.setProvince(rs.getString("province"));
-                System.out.println(rs.getString("province"));
                 renter.setDistrict(rs.getString("district"));
                 renter.setCommune(rs.getString("commune"));
                 renter.setAddress(rs.getString("address"));
@@ -193,10 +198,62 @@ public class RenterModel implements ICommon<Renter> {
         return count;
     }
 
+    public int getTotalRenterIng() {
+        ObservableList<Renter> list = new RenterModel().getAll();
+        int count = (int) list.stream().filter(e -> e.getStatus()==1).count();
+        return count;
+    }
+
+    public int getTotalRenterEd() {
+        ObservableList<Renter> list = new RenterModel().getAll();
+        int count = (int) list.stream().filter(e -> e.getStatus()==0).count();
+        return count;
+    }
+
+    public boolean checkEmail(String email) {
+        String sql = "Select * from " + this.table + " where email = ?";
+        try {
+            conn = DBConnect.getConnect();
+            pstmt = conn.prepareStatement(sql);
+
+            pstmt.setString(1, email);
+            rs = pstmt.executeQuery();
+            while (rs.next()) {
+                return true;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            DBConnect.closePreparedStatement(pstmt);
+            DBConnect.closeConnect(conn);
+        }
+        return false;
+    }
+
+    public boolean checkPhone(String phone) {
+        String sql = "Select * from " + this.table + " where phone = ?";
+        try {
+            conn = DBConnect.getConnect();
+            pstmt = conn.prepareStatement(sql);
+
+            pstmt.setString(1, phone);
+            rs = pstmt.executeQuery();
+            while (rs.next()) {
+                return true;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            DBConnect.closePreparedStatement(pstmt);
+            DBConnect.closeConnect(conn);
+        }
+        return false;
+    }
+
     public static void main(String[] args) throws ParseException {
         RenterModel renterModel = new RenterModel();
-        java.util.Date date = new SimpleDateFormat("yyyy-MM-yy").parse("12-12-2022");
-        Renter r = new Renter("Nguyen Hoang Nam", "0123456789", "nguyenhoangnam@gmail.com", 1, date, "Thai Nguyen", "TP Thai Nguyen", "", "", 1);
-        System.out.println(renterModel.delete(32));
+
+        boolean check = renterModel.checkEmail("0222222222");
+        System.out.println(check);
     }
 }

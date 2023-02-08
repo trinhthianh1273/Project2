@@ -1,10 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.cathive.fonts.fontawesome.FontAwesomeIconView?>
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="657.0" prefWidth="974.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.controller.RenterController">
    <children>
@@ -20,5 +27,129 @@
             </Label>
          </children>
       </HBox>
+      <HBox prefHeight="117.0" prefWidth="974.0">
+         <children>
+            <VBox alignment="CENTER" prefHeight="148.0" prefWidth="185.0">
+               <children>
+                  <Text fx:id="totalRenter" strokeType="OUTSIDE" strokeWidth="0.0" text="totalRenter">
+                     <font>
+                        <Font size="24.0" />
+                     </font></Text>
+                  <Label text="Total Renter">
+                     <graphic>
+                        <FontAwesomeIconView icon="ICON_USER" />
+                     </graphic>
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="148.0" prefWidth="185.0">
+               <children>
+                  <Text fx:id="rentering" strokeType="OUTSIDE" strokeWidth="0.0" text="renter-ing">
+                     <font>
+                        <Font size="24.0" />
+                     </font></Text>
+                  <Label text="Renter-ing">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <graphic>
+                        <FontAwesomeIconView icon="ICON_USER" />
+                     </graphic>
+                  </Label>
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" layoutX="196.0" layoutY="10.0" prefHeight="148.0" prefWidth="185.0">
+               <children>
+                  <Text fx:id="rentered" strokeType="OUTSIDE" strokeWidth="0.0" text="renter-ed">
+                     <font>
+                        <Font size="24.0" />
+                     </font></Text>
+                  <Label text="Renter-ed">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <graphic>
+                        <FontAwesomeIconView icon="ICON_USER" />
+                     </graphic>
+                  </Label>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_RIGHT" prefHeight="53.0" prefWidth="974.0">
+         <children>
+            <TextField fx:id="search_box" style="-fx-background-color: white; -fx-border-color: black; -fx-border-style: solid;" />
+            <Button fx:id="search" alignment="CENTER" minHeight="18.0" mnemonicParsing="false" onMouseClicked="#search" prefHeight="26.0" prefWidth="66.0" text="Search" textAlignment="CENTER">
+               <graphic>
+                  <FontAwesomeIconView icon="ICON_SEARCH" />
+               </graphic>
+               <HBox.margin>
+                  <Insets left="8.0" right="24.0" />
+               </HBox.margin>
+               <font>
+                  <Font size="9.0" />
+               </font>
+            </Button>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" prefHeight="47.0" prefWidth="974.0">
+         <children>
+            <Label prefHeight="18.0" prefWidth="71.0" text="List Room: ">
+               <HBox.margin>
+                  <Insets left="24.0" />
+               </HBox.margin>
+            </Label>
+            <RadioButton fx:id="ing_box" mnemonicParsing="false" onMouseClicked="#show_renter_ing" prefHeight="18.0" prefWidth="90.0" text="Đang Ở" />
+            <RadioButton fx:id="will_move_box" layoutX="128.0" layoutY="20.0" mnemonicParsing="false" onMouseClicked="#show_renter_will_end" prefHeight="18.0" prefWidth="100.0" text="Sắp Rời đi" />
+            <RadioButton fx:id="ed_box" layoutX="196.0" layoutY="20.0" mnemonicParsing="false" onMouseClicked="#show_renter_ed" prefHeight="18.0" prefWidth="100.0" text="Đã rời đi" />
+            <Label fx:id="add" onMouseClicked="#add" style="-fx-cursor: hand;" text="Add">
+               <graphic>
+                  <FontAwesomeIconView icon="ICON_PLUS" prefWidth="12.0" styleClass="icon">
+                     <font>
+                        <Font size="26.0" />
+                     </font>
+                  </FontAwesomeIconView>
+               </graphic>
+               <HBox.margin>
+                  <Insets left="400.0" />
+               </HBox.margin>
+            </Label>
+            <Label fx:id="refesh" onMouseClicked="#refesh" style="-fx-cursor: hand;" text="Refesh">
+               <graphic>
+                  <FontAwesomeIconView icon="ICON_REFRESH">
+                     <font>
+                        <Font size="26.0" />
+                     </font>
+                  </FontAwesomeIconView>
+               </graphic>
+               <HBox.margin>
+                  <Insets left="24.0" />
+               </HBox.margin>
+            </Label>
+         </children>
+      </HBox>
+      <VBox>
+         <children>
+            <TableView fx:id="renter_table" prefHeight="429.0" prefWidth="763.0">
+               <columns>
+                  <TableColumn fx:id="tenant_id" prefWidth="37.599976539611816" text="ID" />
+                  <TableColumn fx:id="tenant_name" prefWidth="154.39995956420898" text="Name" />
+                  <TableColumn fx:id="tenant_gender" prefWidth="66.40000915527344" text="Gender" />
+                  <TableColumn fx:id="tenant_phone" prefWidth="115.20001220703125" text="Phone" />
+                  <TableColumn fx:id="tenant_email" prefWidth="178.4000244140625" text="Email" />
+                  <TableColumn fx:id="tenant_dob" prefWidth="103.20001220703125" text="Birthday" />
+                  <TableColumn fx:id="tenant_address" prefWidth="180.79998779296875" text="Address" />
+                  <TableColumn fx:id="tenant_status" prefWidth="55.2000732421875" text="Status" />
+                  <TableColumn fx:id="action" prefWidth="160.7999267578125" text="action" />
+               </columns>
+               <VBox.margin>
+                  <Insets bottom="24.0" left="12.0" right="12.0" />
+               </VBox.margin>
+            </TableView>
+         </children>
+      </VBox>
    </children>
 </VBox>

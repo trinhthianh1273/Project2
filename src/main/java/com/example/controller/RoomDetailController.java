@@ -88,6 +88,8 @@ public class RoomDetailController implements Initializable {
             alert.setHeaderText("Update Successfully");
             alert.showAndWait().ifPresent(buttonType -> {
                 if (buttonType == ButtonType.OK || buttonType == ButtonType.CANCEL) {
+                    setRoom(room);
+
                     Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
                     stage.close();
                 }
@@ -107,7 +109,7 @@ public class RoomDetailController implements Initializable {
     public void setRoom(Room room) {
         root = room;
         room_id = room.getId();
-        System.out.println(room);
+        System.out.println(room_id);
 
         roomField.setText(room.getName());
 
