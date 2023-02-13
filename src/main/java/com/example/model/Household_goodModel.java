@@ -18,8 +18,9 @@ public class Household_goodModel implements ICommon<Household_good> {
 
     @Override
     public ObservableList<Household_good> getAll() {
+        // System.out.println("get All");
         ObservableList<Household_good> list = FXCollections.observableArrayList();
-        String sql = "Select * from " + this.table;
+        String sql = "Select * from household_good";
 
         try {
             conn = DBConnect.getConnect();
@@ -27,10 +28,13 @@ public class Household_goodModel implements ICommon<Household_good> {
             rs= pstmt.executeQuery();
 
             while (rs.next()) {
+
+                //int id, int category_id, String name, int quanty, int not_used
                 Household_good household_good = new Household_good();
+                household_good.setId(rs.getInt("id"));
                 household_good.setName(rs.getString("name"));
                 household_good.setQuanty(rs.getInt("quanty"));
-                household_good.setNot_used(rs.getInt("not_use"));
+                household_good.setNot_used(rs.getInt("not_used"));
 
                 list.add(household_good);
             }
@@ -110,5 +114,10 @@ public class Household_goodModel implements ICommon<Household_good> {
     @Override
     public boolean refresh() {
         return false;
+    }
+
+    public static void main(String[] args) {
+        Household_goodModel household_goodModel = new Household_goodModel();
+        System.out.println(household_goodModel.getAll());
     }
 }

@@ -16,6 +16,12 @@ public class Receipt {
     private int status;
     private String description;
 
+    private String room;
+    private int electricFee;
+    private int waterFee;
+    private String time;
+
+
     public Receipt() {
     }
 
@@ -154,6 +160,38 @@ public class Receipt {
         this.description = description;
     }
 
+    public String getRoom() {
+        return room;
+    }
+
+    public void setRoom(String room) {
+        this.room = room;
+    }
+
+    public int getElectricFee() {
+        return electricFee;
+    }
+
+    public void setElectricFee(int electricFee) {
+        this.electricFee = electricFee;
+    }
+
+    public int getWaterFee() {
+        return waterFee;
+    }
+
+    public void setWaterFee(int waterFee) {
+        this.waterFee = waterFee;
+    }
+
+    public String getTime() {
+        return time;
+    }
+
+    public void setTime(String time) {
+        this.time = time;
+    }
+
     @Override
     public String toString() {
         return "Receipt{" +
@@ -170,6 +208,10 @@ public class Receipt {
                 ", total_payment=" + total_payment +
                 ", status=" + status +
                 ", description='" + description + '\'' +
+                ", room='" + room + '\'' +
+                ", electricFee=" + electricFee +
+                ", waterFee=" + waterFee +
+                ", time='" + time + '\'' +
                 '}' + "\n";
     }
 }

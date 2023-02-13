@@ -32,7 +32,7 @@
                     <children>
                         <Text fx:id="TotalContract" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
                      <font>
-                        <Font size="18.0" />
+                        <Font size="24.0" />
                      </font></Text>
                         <Label text="TotalContract">
                             <graphic>
@@ -48,7 +48,7 @@
                     <children>
                         <Text fx:id="Renting" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
                      <font>
-                        <Font size="18.0" />
+                        <Font size="24.0" />
                      </font></Text>
                         <Label text="Renting">
                             <graphic>
@@ -64,7 +64,7 @@
                     <children>
                         <Text fx:id="Expirred" strokeType="OUTSIDE" strokeWidth="0.0" text="Expirred">
                      <font>
-                        <Font size="18.0" />
+                        <Font size="24.0" />
                      </font></Text>
                         <Label text="Expirred">
                             <graphic>

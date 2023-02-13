@@ -2,7 +2,6 @@ package com.example.model;
 
 import com.example.common.ICommon;
 import com.example.connect.DBConnect;
-import com.example.entity.Apartment;
 import com.example.entity.Contract;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -11,6 +10,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class ContractModel implements ICommon<Contract> {
     private Connection conn=null;
@@ -235,6 +235,36 @@ public class ContractModel implements ICommon<Contract> {
     @Override
     public boolean refresh() {
         return false;
+    }
+
+    public String getRoomByContractId(int contract_id) {
+        String sql = "Select * from " + this.table + " where id = ?";
+
+        return null;
+    }
+
+    public AtomicInteger getContractRenting() {
+        AtomicInteger rentingCount = new AtomicInteger();
+        ObservableList<Contract> list = this.getAll();
+
+        list.forEach(item -> {
+            if(item.getStatus() == 1) {
+                rentingCount.getAndIncrement();
+            }
+        });
+        return rentingCount;
+    }
+
+    public AtomicInteger getContractExpirred() {
+        AtomicInteger expirredCount = new AtomicInteger();
+        ObservableList<Contract> list = this.getAll();
+
+        list.forEach(item -> {
+            if(item.getStatus() == 0) {
+                expirredCount.getAndIncrement();
+            }
+        });
+        return expirredCount;
     }
 
     public static void main(String[] args) {

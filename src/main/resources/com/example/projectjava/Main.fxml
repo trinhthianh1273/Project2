@@ -157,7 +157,7 @@
                   <Font name="Gabriola" size="20.0" />
                </font>
                <graphic>
-                  <FontAwesomeIconView icon="ICON_WRENCH" styleClass="sidebar-btn-icon">
+                  <FontAwesomeIconView icon="ICON_USER" styleClass="sidebar-btn-icon">
                      <font>
                         <Font size="24.0" />
                      </font>

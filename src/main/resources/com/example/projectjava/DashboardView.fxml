@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.cathive.fonts.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
@@ -31,7 +32,10 @@
          <children>
             <VBox alignment="CENTER" prefHeight="148.0" prefWidth="185.0">
                <children>
-                  <Text fx:id="TotalBuilding" strokeType="OUTSIDE" strokeWidth="0.0" text="TotalBuilding" />
+                  <Text fx:id="TotalBuilding" strokeType="OUTSIDE" strokeWidth="0.0" text="TotalBuilding">
+                     <font>
+                        <Font size="24.0" />
+                     </font></Text>
                   <Label text="Total Apartment">
                      <graphic>
                         <FontAwesomeIconView icon="ICON_BUILDING" />
@@ -41,10 +45,16 @@
                      </font>
                   </Label>
                </children>
+               <HBox.margin>
+                  <Insets left="24.0" right="24.0" />
+               </HBox.margin>
             </VBox>
             <VBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="148.0" prefWidth="185.0">
                <children>
-                  <Text fx:id="TotalRoom" strokeType="OUTSIDE" strokeWidth="0.0" text="TotalRoom" />
+                  <Text fx:id="TotalRoom" strokeType="OUTSIDE" strokeWidth="0.0" text="TotalRoom">
+                     <font>
+                        <Font size="24.0" />
+                     </font></Text>
                   <Label text="Total Room">
                      <graphic>
                         <FontAwesomeIconView icon="ICON_HOME" />
@@ -54,10 +64,16 @@
                      </font>
                   </Label>
                </children>
+               <HBox.margin>
+                  <Insets left="24.0" right="24.0" />
+               </HBox.margin>
             </VBox>
             <VBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="148.0" prefWidth="185.0">
                <children>
-                  <Text fx:id="TotalTenant" strokeType="OUTSIDE" strokeWidth="0.0" text="TotalTenant" />
+                  <Text fx:id="TotalTenant" strokeType="OUTSIDE" strokeWidth="0.0" text="TotalTenant">
+                     <font>
+                        <Font size="24.0" />
+                     </font></Text>
                   <Label text="Total Renter">
                      <graphic>
                         <FontAwesomeIconView icon="ICON_USER" />
@@ -67,20 +83,202 @@
                      </font>
                   </Label>
                </children>
+               <HBox.margin>
+                  <Insets left="24.0" right="24.0" />
+               </HBox.margin>
             </VBox>
-            <VBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="148.0" prefWidth="185.0">
+         </children></HBox>
+      <HBox alignment="CENTER" layoutX="10.0" layoutY="106.0" prefHeight="148.0" prefWidth="974.0">
+         <children>
+            <VBox alignment="CENTER" prefHeight="148.0" prefWidth="185.0">
                <children>
-                  <Text fx:id="TotalBuilding3" strokeType="OUTSIDE" strokeWidth="0.0" text="TotalBuilding" />
-                  <Label text="Total Building">
+                  <Text fx:id="TotalContract" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
+                  <Label text="Total Contract">
                      <graphic>
-                        <FontAwesomeIconView />
+                        <FontAwesomeIconView icon="ICON_STAR" />
                      </graphic>
                      <font>
                         <Font size="18.0" />
                      </font>
                   </Label>
                </children>
+               <HBox.margin>
+                  <Insets left="24.0" right="24.0" />
+               </HBox.margin>
             </VBox>
-         </children></HBox>
+            <VBox alignment="CENTER" prefHeight="148.0" prefWidth="185.0">
+               <children>
+                  <Text fx:id="Renting" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
+                  <Label text="ContractRenting">
+                     <graphic>
+                        <FontAwesomeIconView icon="ICON_USER" />
+                     </graphic>
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+               <HBox.margin>
+                  <Insets left="24.0" right="24.0" />
+               </HBox.margin>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="148.0" prefWidth="185.0">
+               <children>
+                  <Text fx:id="Expirred" strokeType="OUTSIDE" strokeWidth="0.0" text="Expirred">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
+                  <Label text="Contract Expirred">
+                     <graphic>
+                        <FontAwesomeIconView icon="ICON_TRASH" />
+                     </graphic>
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+               <HBox.margin>
+                  <Insets left="24.0" right="24.0" />
+               </HBox.margin>
+            </VBox>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" layoutX="10.0" layoutY="254.0" prefHeight="148.0" prefWidth="974.0">
+         <children>
+            <VBox alignment="CENTER" prefHeight="94.0" prefWidth="185.0">
+               <children>
+                  <Text fx:id="TotalReceipt" strokeType="OUTSIDE" strokeWidth="0.0" text="Total">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
+                  <Label text="Total Receipt">
+                     <graphic>
+                        <FontAwesomeIconView icon="ICON_STAR" />
+                     </graphic>
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+               <HBox.margin>
+                  <Insets left="24.0" right="24.0" />
+               </HBox.margin>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="88.0" prefWidth="185.0">
+               <children>
+                  <Text fx:id="finishedTotal" strokeType="OUTSIDE" strokeWidth="0.0" text="Finished">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
+                  <Label text="Receipt Finished">
+                     <graphic>
+                        <FontAwesomeIconView icon="ICON_USER" />
+                     </graphic>
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+               <HBox.margin>
+                  <Insets left="24.0" right="24.0" />
+               </HBox.margin>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="88.0" prefWidth="185.0">
+               <children>
+                  <Text fx:id="unfinishedTotal" strokeType="OUTSIDE" strokeWidth="0.0" text="unFinished">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
+                  <Label text="Receipt Un-Finished">
+                     <graphic>
+                        <FontAwesomeIconView icon="ICON_TRASH" />
+                     </graphic>
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+               <HBox.margin>
+                  <Insets left="24.0" right="24.0" />
+               </HBox.margin>
+            </VBox>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" layoutX="10.0" layoutY="402.0" prefHeight="148.0" prefWidth="974.0">
+         <children>
+            <VBox alignment="CENTER" prefHeight="148.0" prefWidth="185.0">
+               <children>
+                  <Text fx:id="totalRenter" strokeType="OUTSIDE" strokeWidth="0.0" text="totalRenter">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
+                  <Label text="Total Renter">
+                     <graphic>
+                        <FontAwesomeIconView icon="ICON_USER" />
+                     </graphic>
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+               <HBox.margin>
+                  <Insets left="24.0" right="24.0" />
+               </HBox.margin>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="148.0" prefWidth="185.0">
+               <children>
+                  <Text fx:id="rentering" strokeType="OUTSIDE" strokeWidth="0.0" text="renter-ing">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
+                  <Label text="Renter-ing">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <graphic>
+                        <FontAwesomeIconView icon="ICON_USER" />
+                     </graphic>
+                  </Label>
+               </children>
+               <HBox.margin>
+                  <Insets left="24.0" right="24.0" />
+               </HBox.margin>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="148.0" prefWidth="185.0">
+               <children>
+                  <Text fx:id="rentered" strokeType="OUTSIDE" strokeWidth="0.0" text="renter-ed">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
+                  <Label text="Renter-ed">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <graphic>
+                        <FontAwesomeIconView icon="ICON_USER" />
+                     </graphic>
+                  </Label>
+               </children>
+               <HBox.margin>
+                  <Insets left="24.0" right="24.0" />
+               </HBox.margin>
+            </VBox>
+         </children>
+      </HBox>
    </children>
 </VBox>

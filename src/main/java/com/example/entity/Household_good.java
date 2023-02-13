@@ -6,15 +6,17 @@ public class Household_good {
     private String name;
     private int quanty;
     private int not_used;
+    private int in_used;
 
     public Household_good() {
     }
 
-    public Household_good(int id, int category_id, String name, int quanty, int not_used) {
+    public Household_good(int id, int category_id, String name, int quanty,int in_used, int not_used) {
         this.id = id;
         this.category_id = category_id;
         this.name = name;
         this.quanty = quanty;
+        this.in_used = in_used;
         this.not_used = not_used;
     }
 
@@ -58,14 +60,23 @@ public class Household_good {
         this.not_used = not_used;
     }
 
+    public int getIn_used() {
+        return in_used;
+    }
+
+    public void setIn_used(int in_used) {
+        this.in_used = in_used;
+    }
+
     @Override
     public String toString() {
-        return "household_good{" +
+        return "Household_good{" +
                 "id=" + id +
                 ", category_id=" + category_id +
                 ", name='" + name + '\'' +
                 ", quanty=" + quanty +
                 ", not_used=" + not_used +
-                '}' + "\n";
+                ", in_used=" + in_used +
+                '}';
     }
 }

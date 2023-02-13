@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
-<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
@@ -24,21 +20,6 @@
             </Label>
          </children>
       </HBox>
-      <AnchorPane prefHeight="515.0" prefWidth="974.0">
-         <children>
-            <TableView layoutY="106.0" prefHeight="409.0" prefWidth="974.0">
-              <columns>
-                <TableColumn prefWidth="75.0" text="Id" />
-                <TableColumn prefWidth="132.66671752929688" text="Name" />
-                  <TableColumn prefWidth="104.0" text="LoginId" />
-                  <TableColumn prefWidth="138.66668701171875" text="Password" />
-                  <TableColumn prefWidth="142.00006103515625" text="Permission" />
-                  <TableColumn prefWidth="159.3333740234375" text="CreatDate" />
-                  <TableColumn prefWidth="127.333251953125" text="Update" />
-                  <TableColumn prefWidth="99.3333740234375" text="Button" />
-              </columns>
-            </TableView>
-            <Button layoutX="50.0" layoutY="25.0" mnemonicParsing="false" text="AddNew" />
-         </children></AnchorPane>
+      <HBox />
    </children>
 </VBox>

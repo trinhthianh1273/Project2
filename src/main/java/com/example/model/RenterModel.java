@@ -2,6 +2,7 @@ package com.example.model;
 
 import com.example.common.ICommon;
 import com.example.connect.DBConnect;
+import com.example.entity.Receipt;
 import com.example.entity.Renter;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -249,6 +250,7 @@ public class RenterModel implements ICommon<Renter> {
         }
         return false;
     }
+
 
     public static void main(String[] args) throws ParseException {
         RenterModel renterModel = new RenterModel();

@@ -11,11 +11,11 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="520.0" prefWidth="800.0" stylesheets="@asset/css/login.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.controller.ApartmentAddController">
+<HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="520.0" prefWidth="766.0" stylesheets="@asset/css/login.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.controller.ApartmentAddController">
    <children>
       <ImageView fitHeight="520.0" fitWidth="400.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../../../OneDrive/Pictures/Tranh/286909074_723858852000193_3628200865960896005_n.jpg" />
+            <Image url="@asset/img/group1-real-estate-high-resolution-logo-black-on-transparent-background.png" />
          </image>
       </ImageView>
       <VBox prefHeight="200.0" prefWidth="400.0" style="-fx-background-color: white;">

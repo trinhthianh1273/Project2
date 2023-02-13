@@ -2,12 +2,14 @@ package com.example.model;
 
 import com.example.common.ICommon;
 import com.example.connect.DBConnect;
+import com.example.entity.Contract;
 import com.example.entity.Receipt;
 import com.example.entity.Room;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
 import java.sql.*;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class ReceiptModel implements ICommon<Receipt> {
     private Connection conn=null;
@@ -28,8 +30,11 @@ public class ReceiptModel implements ICommon<Receipt> {
 
             while (rs.next()) {
                 Receipt receipt = new Receipt();
+
+                int contract_id = rs.getInt("contract_id");
+
                 receipt.setId(rs.getInt("id"));
-                receipt.setContract_id(rs.getInt("contract_id"));
+                receipt.setContract_id(contract_id);
                 receipt.setYear(rs.getInt("year"));
                 receipt.setMonth(rs.getInt("month"));
                 receipt.setElectricOld(rs.getInt("electricOld"));
@@ -41,6 +46,32 @@ public class ReceiptModel implements ICommon<Receipt> {
                 receipt.setTotal_payment(rs.getInt("total_payment"));
                 receipt.setStatus(rs.getInt("status"));
                 receipt.setDescription(rs.getString("description"));
+
+                receipt.setTime(receipt.getMonth() + "/" + receipt.getYear());
+
+                // lấy tt phòng từ hợp đồng
+                int room_id = 0;
+
+                sql = "select room_id from contract where id = " + contract_id;
+                PreparedStatement pstmtR = conn.prepareStatement(sql);
+                ResultSet resultSetR = pstmtR.executeQuery();
+                while (resultSetR.next()) {
+                    room_id = resultSetR.getInt("room_id");
+                }
+
+                sql = "select * from room where id = " + room_id;
+                pstmtR = conn.prepareStatement(sql);
+                resultSetR = pstmtR.executeQuery();
+                while (resultSetR.next()) {
+                    receipt.setRoom("Phòng" + resultSetR.getString("name"));
+                }
+
+                // tính tiền điện
+                int electricFee = (receipt.getElectricNew() - receipt.getElectricOld()) * 4000;
+                int waterFee = (receipt.getWaterNew() - receipt.getWaterOld()) * 25000;
+
+                receipt.setElectricFee(electricFee);
+                receipt.setWaterFee(waterFee);
 
                 list.add(receipt);
             }
@@ -186,6 +217,34 @@ public class ReceiptModel implements ICommon<Receipt> {
     @Override
     public boolean refresh() {
         return false;
+    }
+
+    public int getTotalReceipt() {
+        return this.getAll().size();
+    }
+
+    public AtomicInteger getFinishedReceipt() {
+        AtomicInteger finishCount = new AtomicInteger();
+        ObservableList<Receipt> list = this.getAll();
+
+        list.forEach(item -> {
+            if(item.getStatus() == 1) {
+                finishCount.getAndIncrement();
+            }
+        });
+        return finishCount;
+    }
+
+    public AtomicInteger getunFinishedReceipt() {
+        AtomicInteger unfinishCount = new AtomicInteger();
+        ObservableList<Receipt> list = this.getAll();
+
+        list.forEach(item -> {
+            if(item.getStatus() == 0) {
+                unfinishCount.getAndIncrement();
+            }
+        });
+        return unfinishCount;
     }
 
     public static void main(String[] args) {

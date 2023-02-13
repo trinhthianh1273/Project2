@@ -98,9 +98,6 @@ public class ContractController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        //contract_table.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
-
-
         contract_id.setCellValueFactory(new PropertyValueFactory<>("id"));
         apartment_name.setCellValueFactory(new PropertyValueFactory<>("apartment_name"));
         room_name.setCellValueFactory(new PropertyValueFactory<>("room_name"));
@@ -109,9 +106,8 @@ public class ContractController implements Initializable {
         endDate.setCellValueFactory(new PropertyValueFactory<>("endDate"));
         status.setCellValueFactory(new PropertyValueFactory<>("status"));
 
-
         ObservableList<Contract> list = new ContractModel().getAllBrief();
-        System.out.println(list);
+        //System.out.println(list);
         contract_table.setItems(list);
 
         ObservableList<String> optionsName = new ApartmentModel().getApartmentName();

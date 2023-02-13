@@ -8,6 +8,7 @@
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.Spinner?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
@@ -38,7 +39,7 @@
             <Insets top="12.0" />
          </VBox.margin>
       </HBox>
-      <HBox prefHeight="326.0" prefWidth="591.0">
+      <HBox alignment="CENTER" prefHeight="326.0" prefWidth="591.0">
          <children>
             <VBox prefHeight="267.0" prefWidth="325.0">
                <children>
@@ -125,7 +126,10 @@
                   </HBox>
                </children>
             </VBox>
-            <ImageView fx:id="img" fitHeight="328.0" fitWidth="355.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="img" fitHeight="328.0" fitWidth="355.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@asset/img/group1-real-estate-high-resolution-logo-black-on-transparent-background.png" />
+               </image></ImageView>
          </children>
       </HBox>
       <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
