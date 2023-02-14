@@ -1,16 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.cathive.fonts.fontawesome.FontAwesomeIconView?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="657.0" prefWidth="974.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="657.0" prefWidth="974.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.controller.Household_goodController">
    <children>
       <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
          <children>
-            <Label fx:id="contract_label" text="Household Good Management" textFill="#757373">
+            <Label fx:id="contract_label1" text="Household Good Management" textFill="#757373">
                <font>
                   <Font size="24.0" />
                </font>
@@ -20,5 +24,88 @@
             </Label>
          </children>
       </HBox>
+      <HBox prefHeight="129.0" prefWidth="974.0">
+         <children>
+            <VBox alignment="CENTER" prefHeight="100.0" prefWidth="180.0">
+               <children>
+                  <Text fx:id="totalItem" strokeType="OUTSIDE" strokeWidth="0.0" text="TotalItem">
+                     <font>
+                        <Font size="20.0" />
+                     </font></Text>
+                  <Label text="TotalItem">
+                     <graphic>
+                        <FontAwesomeIconView icon="ICON_HOME" />
+                     </graphic>
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="100.0" prefWidth="180.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="InUse">
+                     <font>
+                        <Font size="20.0" />
+                     </font></Text>
+                  <Label fx:id="inuseItem" alignment="CENTER" text="InUse">
+                     <graphic>
+                        <FontAwesomeIconView icon="ICON_PLUS" prefHeight="0.0" prefWidth="21.0" />
+                     </graphic>
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="100.0" prefWidth="180.0">
+               <children>
+                  <Text fx:id="availableItem" strokeType="OUTSIDE" strokeWidth="0.0" text="Available">
+                     <font>
+                        <Font size="20.0" />
+                     </font></Text>
+                  <Label id="Avalible" alignment="CENTER" text="Available" textAlignment="JUSTIFY">
+                     <graphic>
+                        <FontAwesomeIconView icon="ICON_MINUS_SIGN" />
+                     </graphic>
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+               <opaqueInsets>
+                  <Insets left="100.0" />
+               </opaqueInsets>
+            </VBox>
+         </children>
+         <opaqueInsets>
+            <Insets left="100.0" right="100.0" />
+         </opaqueInsets>
+      </HBox>
+      <VBox prefHeight="419.0" prefWidth="974.0">
+         <children>
+            <TableView fx:id="household_table" layoutX="46.0" layoutY="10.0" prefHeight="306.0" prefWidth="902.0">
+               <columns>
+                  <TableColumn fx:id="household_name" prefWidth="220.79996871948242" text="Household Good" />
+                  <TableColumn fx:id="total_col" prefWidth="139.20001220703125" text="Total" />
+                  <TableColumn fx:id="inuse_col" prefWidth="151.20001220703125" text="InUse" />
+                  <TableColumn fx:id="available_col" prefWidth="162.400146484375" text="Available" />
+                  <TableColumn fx:id="action" prefWidth="100.7999267578125" text="Action" />
+               </columns>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+            </TableView>
+         </children>
+         <padding>
+            <Insets left="36.0" right="36.0" />
+         </padding>
+         <VBox.margin>
+            <Insets top="24.0" />
+         </VBox.margin>
+      </VBox>
    </children>
+   <opaqueInsets>
+      <Insets />
+   </opaqueInsets>
 </VBox>

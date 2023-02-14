@@ -2,12 +2,14 @@ package com.example.model;
 
 import com.example.common.ICommon;
 import com.example.connect.DBConnect;
+import com.example.entity.Contract;
 import com.example.entity.Receipt;
 import com.example.entity.Room;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
 import java.sql.*;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class ReceiptModel implements ICommon<Receipt> {
     private Connection conn=null;
@@ -28,17 +30,48 @@ public class ReceiptModel implements ICommon<Receipt> {
 
             while (rs.next()) {
                 Receipt receipt = new Receipt();
+
+                int contract_id = rs.getInt("contract_id");
+
                 receipt.setId(rs.getInt("id"));
-                receipt.setContract_id(rs.getInt("contract_id"));
+                receipt.setContract_id(contract_id);
                 receipt.setYear(rs.getInt("year"));
                 receipt.setMonth(rs.getInt("month"));
-                receipt.setElectric(rs.getInt("electric"));
-                receipt.setWater(rs.getInt("water"));
+                receipt.setElectricOld(rs.getInt("electricOld"));
+                receipt.setElectricNew(rs.getInt("electricNew"));
+                receipt.setWaterOld(rs.getInt("waterOld"));
+                receipt.setWaterNew(rs.getInt("waterNew"));
                 receipt.setService(rs.getInt("service"));
                 receipt.setForfeit(rs.getInt("forfeit"));
                 receipt.setTotal_payment(rs.getInt("total_payment"));
                 receipt.setStatus(rs.getInt("status"));
                 receipt.setDescription(rs.getString("description"));
+
+                receipt.setTime(receipt.getMonth() + "/" + receipt.getYear());
+
+                // lấy tt phòng từ hợp đồng
+                int room_id = 0;
+
+                sql = "select room_id from contract where id = " + contract_id;
+                PreparedStatement pstmtR = conn.prepareStatement(sql);
+                ResultSet resultSetR = pstmtR.executeQuery();
+                while (resultSetR.next()) {
+                    room_id = resultSetR.getInt("room_id");
+                }
+
+                sql = "select * from room where id = " + room_id;
+                pstmtR = conn.prepareStatement(sql);
+                resultSetR = pstmtR.executeQuery();
+                while (resultSetR.next()) {
+                    receipt.setRoom("Phòng" + resultSetR.getString("name"));
+                }
+
+                // tính tiền điện
+                int electricFee = (receipt.getElectricNew() - receipt.getElectricOld()) * 4000;
+                int waterFee = (receipt.getWaterNew() - receipt.getWaterOld()) * 25000;
+
+                receipt.setElectricFee(electricFee);
+                receipt.setWaterFee(waterFee);
 
                 list.add(receipt);
             }
@@ -68,8 +101,10 @@ public class ReceiptModel implements ICommon<Receipt> {
                 receipt.setContract_id(rs.getInt("contract_id"));
                 receipt.setYear(rs.getInt("year"));
                 receipt.setMonth(rs.getInt("month"));
-                receipt.setElectric(rs.getInt("electric"));
-                receipt.setWater(rs.getInt("water"));
+                receipt.setElectricOld(rs.getInt("electricOld"));
+                receipt.setElectricNew(rs.getInt("electricNew"));
+                receipt.setWaterOld(rs.getInt("waterOld"));
+                receipt.setWaterNew(rs.getInt("waterNew"));
                 receipt.setService(rs.getInt("service"));
                 receipt.setForfeit(rs.getInt("forfeit"));
                 receipt.setTotal_payment(rs.getInt("total_payment"));
@@ -99,8 +134,10 @@ public class ReceiptModel implements ICommon<Receipt> {
             pstmt.setInt(1, obj.getContract_id());
             pstmt.setInt(2, obj.getYear());
             pstmt.setInt(3, obj.getMonth());
-            pstmt.setInt(4, obj.getElectric());
-            pstmt.setInt(5, obj.getWater());
+            pstmt.setInt(4, obj.getElectricOld());
+            pstmt.setInt(4, obj.getElectricNew());
+            pstmt.setInt(5, obj.getWaterOld());
+            pstmt.setInt(5, obj.getWaterNew());
             pstmt.setInt(6, obj.getService());
             pstmt.setInt(7, obj.getForfeit());
             pstmt.setInt(8, obj.getTotal_payment());
@@ -130,8 +167,10 @@ public class ReceiptModel implements ICommon<Receipt> {
 
             pstmt.setInt(1, obj.getYear());
             pstmt.setInt(2, obj.getMonth());
-            pstmt.setInt(3, obj.getElectric());
-            pstmt.setInt(4, obj.getWater());
+            pstmt.setInt(3, obj.getElectricOld());
+            pstmt.setInt(3, obj.getElectricNew());
+            pstmt.setInt(4, obj.getWaterOld());
+            pstmt.setInt(4, obj.getWaterNew());
             pstmt.setInt(5, obj.getService());
             pstmt.setInt(6, obj.getForfeit());
             pstmt.setInt(7, obj.getTotal_payment());
@@ -178,6 +217,34 @@ public class ReceiptModel implements ICommon<Receipt> {
     @Override
     public boolean refresh() {
         return false;
+    }
+
+    public int getTotalReceipt() {
+        return this.getAll().size();
+    }
+
+    public AtomicInteger getFinishedReceipt() {
+        AtomicInteger finishCount = new AtomicInteger();
+        ObservableList<Receipt> list = this.getAll();
+
+        list.forEach(item -> {
+            if(item.getStatus() == 1) {
+                finishCount.getAndIncrement();
+            }
+        });
+        return finishCount;
+    }
+
+    public AtomicInteger getunFinishedReceipt() {
+        AtomicInteger unfinishCount = new AtomicInteger();
+        ObservableList<Receipt> list = this.getAll();
+
+        list.forEach(item -> {
+            if(item.getStatus() == 0) {
+                unfinishCount.getAndIncrement();
+            }
+        });
+        return unfinishCount;
     }
 
     public static void main(String[] args) {

@@ -4,10 +4,13 @@ public class Room {
     private int id;
     private int apartment_id;
     private String name;
+    private String apartment_name;
     private int floor;
     private int member_max;
+    private int actual_people;
     private int rental;
     private int status;
+    private int blank;
 
     public Room() {
     }
@@ -87,16 +90,43 @@ public class Room {
         this.status = status;
     }
 
+    public int getBlank() {
+        return blank;
+    }
+
+    public void setBlank(int blank) {
+        this.blank = blank;
+    }
+
+    public String getApartment_name() {
+        return apartment_name;
+    }
+
+    public void setApartment_name(String apartment_name) {
+        this.apartment_name = apartment_name;
+    }
+
+    public int getActual_people() {
+        return actual_people;
+    }
+
+    public void setActual_people(int actual_people) {
+        this.actual_people = actual_people;
+    }
+
     @Override
     public String toString() {
-        return "room{" +
+        return "Room{" +
                 "id=" + id +
                 ", apartment_id=" + apartment_id +
                 ", name='" + name + '\'' +
+                ", apartment_name='" + apartment_name + '\'' +
                 ", floor=" + floor +
                 ", member_max=" + member_max +
+                ", actual_people=" + actual_people +
                 ", rental=" + rental +
                 ", status=" + status +
-                '}' + "\n";
+                ", blank=" + blank +
+                '}';
     }
 }

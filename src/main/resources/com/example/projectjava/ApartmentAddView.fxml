@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.cathive.fonts.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="520.0" prefWidth="766.0" stylesheets="@asset/css/login.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.controller.ApartmentAddController">
+   <children>
+      <ImageView fitHeight="520.0" fitWidth="400.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@asset/img/group1-real-estate-high-resolution-logo-black-on-transparent-background.png" />
+         </image>
+      </ImageView>
+      <VBox prefHeight="200.0" prefWidth="400.0" style="-fx-background-color: white;">
+         <children>
+            <HBox fx:id="labelBox" alignment="CENTER_LEFT" prefHeight="110.0" prefWidth="400.0">
+               <children>
+                  <Label text="This is new Apartemnt">
+                     <HBox.margin>
+                        <Insets left="24.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font size="22.0" />
+                     </font>
+                     <graphic>
+                        <FontAwesomeIconView icon="ICON_HOME">
+                           <padding>
+                              <Insets right="12.0" />
+                           </padding>
+                        </FontAwesomeIconView>
+                     </graphic>
+                  </Label>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="24.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="55.0" prefWidth="400.0">
+               <children>
+                  <Label prefWidth="100.0" text="Name: ">
+                     <HBox.margin>
+                        <Insets left="36.0" />
+                     </HBox.margin></Label>
+                  <TextField fx:id="name" prefHeight="27.0" prefWidth="188.0" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="92.0" prefHeight="55.0" prefWidth="400.0">
+               <children>
+                  <Label prefWidth="100.0" text="Floor_quanty: ">
+                     <HBox.margin>
+                        <Insets left="36.0" />
+                     </HBox.margin></Label>
+                  <TextField fx:id="floor_quanty" prefWidth="188.0" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="148.0" prefHeight="55.0" prefWidth="400.0">
+               <children>
+                  <Label prefWidth="100.0" text="Room_quanty: ">
+                     <HBox.margin>
+                        <Insets left="36.0" />
+                     </HBox.margin></Label>
+                  <TextField fx:id="room_quanty" prefWidth="188.0" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+               <VBox.margin>
+                  <Insets top="24.0" />
+               </VBox.margin>
+               <children>
+                  <Button fx:id="add" mnemonicParsing="false" onMouseClicked="#add" styleClass="add-view-btn" stylesheets="@asset/css/main.css" text="ADD">
+                     <HBox.margin>
+                        <Insets right="24.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="reset" mnemonicParsing="false" onMouseClicked="#reset" styleClass="add-view-btn" stylesheets="@asset/css/main.css" text="RESET">
+                     <HBox.margin>
+                        <Insets left="24.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</HBox>

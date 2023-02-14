@@ -7,12 +7,18 @@ import javafx.stage.Stage;
 
 public class Main extends Application {
 
+    public static void main(String[] args) {
+        launch(args);
+    }
+
     @Override
     public void start(Stage stage) throws Exception {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Main.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("LoginView1.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         stage.setScene(scene);
+        scene.getStylesheets().add(getClass().getResource("asset/css/login.css").toExternalForm());
         scene.getStylesheets().add(getClass().getResource("asset/css/sidebar.css").toExternalForm());
+        scene.getStylesheets().add(getClass().getResource("asset/css/main.css").toExternalForm());
         stage.show();
     }
 }

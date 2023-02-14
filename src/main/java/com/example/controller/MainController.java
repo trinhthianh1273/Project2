@@ -1,17 +1,23 @@
 package com.example.controller;
 
+import com.example.entity.UserSession;
+import javafx.beans.Observable;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.css.PseudoClass;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Text;
 
 import java.io.IOException;
 import java.net.URL;
@@ -36,8 +42,6 @@ public class MainController implements Initializable {
     @FXML
     private Label apartment;
 
-    @FXML
-    private HBox apartment_link;
 
     @FXML
     private BorderPane border_pane;
@@ -46,19 +50,21 @@ public class MainController implements Initializable {
     private Label contract;
 
     @FXML
-    private HBox contract_link;
+    private Button contract_link;
 
     @FXML
     private Label dashboard;
 
     @FXML
-    private HBox dashboard_link;
+    private Button dashboard_link;
+    @FXML
+    private Button apartment_link;
 
     @FXML
     private Label household_good;
 
     @FXML
-    private HBox household_good_link;
+    private Button household_good_link;
 
     @FXML
     private ImageView logo;
@@ -67,49 +73,57 @@ public class MainController implements Initializable {
     private Label manager;
 
     @FXML
-    private HBox manager_link;
+    private Button manager_link;
 
     @FXML
     private Label receipt;
 
     @FXML
-    private HBox receipt_link;
+    private Button receipt_link;
 
     @FXML
     private Label renter;
 
     @FXML
-    private HBox renter_link;
+    private Button renter_link;
 
     @FXML
     private Label room;
 
     @FXML
-    private HBox room_link;
+    private Button room_link;
 
     @FXML
     private Label setting;
 
     @FXML
-    private HBox setting_link;
+    private Button setting_link;
 
     @FXML
     private VBox sidebar;
 
     @FXML
-    private Label signout;
+    private Button signout;
+
+    @FXML
+    private Text userSessionName;
 
     @FXML
     void out(MouseEvent event) {
 
     }
 
+    void setUserSession(UserSession userSession) {
+        userSessionName.setText(userSession.getUserName());
+    }
+
     @FXML
     void show_apartment(MouseEvent event) throws IOException {
+        System.out.printf("Apartment clicked");
         URL url_content = Paths.get("src/main/resources/com/example/projectjava/ApartmentView.fxml").toUri().toURL();
         Parent content = FXMLLoader.load(url_content);
-
         border_pane.setRight(content);
+
         apartment_link.getStyleClass().add("sidebar-btn-active");
 
         dashboard_link.getStyleClass().remove("sidebar-btn-active");
@@ -163,6 +177,7 @@ public class MainController implements Initializable {
 
     @FXML
     void show_household_good(MouseEvent event) throws IOException {
+        System.out.println("apartment view");
         URL url_content = Paths.get("src/main/resources/com/example/projectjava/Household_goodView.fxml").toUri().toURL();
         Parent content = FXMLLoader.load(url_content);
         border_pane.setRight(content);
